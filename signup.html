@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio 88 - Sign Up</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Main Header: Contains Logo, Navigation, and Mobile Menu Toggle -->
+  <header class="main-header">
+    <a href="index.html" class="logo-container">
+      <img src="_images/studiologo.jpg" alt="Studio 88 Logo" class="logo">
+    </a>
+    <!-- Main navigation links -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+    <!-- Hamburger menu icon for mobile -->
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+  </header>
+
+<!-- Main content area with the sign-up form -->
+<main id="SignUp">
+
+    <h1>Sign Up</h1>
+    <!-- Introductory text for the sign-up form -->
+    <p class="signup-intro">
+  Join Studio 88 today! Fill out the form below to create your account and get access to our services. 
+  It's quick, easy, and free.
+</p>
+    <!-- Sign-up form -->
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="signup-fullname" name="fullname" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="signup-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="signup-password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="signup-confirm-password" name="confirm-password" required>
+      </div>
+      <button type="submit" class="shop-now">Sign Up</button>
+    </form>
+    <!-- Link to the login page for existing users -->
+    <p>Already have an account? <a href="login.html">Login</a></p>
+
+    <!-- Paragraph to display success or error messages from the sign-up attempt -->
+    <p id="signup-message" class="form-message"></p>
+
+</main>
+
+<!-- Common footer for the website -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="./_images/studiologo.jpg" alt="Studio 88 Logo">
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <h3>SIGN UP TO OUR NEWSLETTER TO STAY UPDATED </h3>
+      <form id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Enter your email" required>
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <p id="newsletterMessage"></p>
+    </div>
+
+    <!-- Links & Social Wrapper -->
+    <div class="footer-right-content">
+      <!-- Links -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>About Us</h4>
+          <p>Studio 88 is South Africa’s largest branded fashion retailer, bringing you the latest styles from top international sports and lifestyle brands.</p>
+          <a href="about.html">Learn more</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <p>Need assistance? Get in touch with our team for store details, online orders, or general inquiries.</p>
+          <a href="contact.html">Get in touch</a>
+        </div>
+      </div>
+      <!-- Social Media -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/studio88clothing/?_rdc=2&_rdr#" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/studio88_branded/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/Studio_88" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class= 'rights' >
+    <p>&copy; 2025 Studio 88. All Rights Reserved.</p>
+    
+  </div>
+</footer>
+
+  <!-- JavaScript and Font Awesome resources -->
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</body>
+</html>

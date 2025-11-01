@@ -1,0 +1,3150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop with Filters</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Main Header: Contains Logo, Navigation, and Mobile Menu Toggle -->
+  <header class="main-header">
+    <a href="index.html" class="logo-container">
+      <img src="_images/studiologo.jpg" alt="Studio 88 Logo" class="logo">
+    </a>
+    <!-- Main navigation links -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+    <!-- Hamburger menu icon for mobile -->
+    <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+  </header>
+
+<!-- Main content of the products page -->
+<main>
+      <!-- Introductory section for the products page -->
+      <section class="products-intro">
+    <h1>Our Products</h1>
+    <p>
+      Explore our range of premium products at Studio 88. 
+      Each item is carefully crafted to meet the highest standards of quality and design.
+    </p>
+  </section>
+  <!-- Filter Bar: Allows users to filter products by gender, brand, and category -->
+  <div class="filter-bar">
+    <label for="gender">Gender:</label>
+    <select id="gender">
+      <option value="all">All</option>
+      <option value="men">Men</option>
+      <option value="women">Women</option>
+    </select>
+
+    <label for="brand">Brand:</label>
+    <select id="brand">
+      <option value="all">All</option>
+      <option value="nike">Nike</option>
+      <option value="adidas">Adidas</option>
+      <option value="puma">Puma</option>
+      <option value="air jordan">Air Jordan</option>  
+    </select>
+
+    <label for="category">Category:</label>
+    <select id="category">
+      <option value="all">All</option>
+      <option value="footwear">Footwear</option>
+      <option value="clothing">Clothing</option>
+      <option value="accessories">Accessories</option>
+      <option value="sambae">Sambae</option>
+    </select>
+  </div>
+
+  <!-- Product Grid: Displays all the product cards -->
+  <div class="product-grid" id="productGrid">
+    <!-- Product Card Example: Each card contains product info and an "Add to Cart" button. -->
+    <!-- `data-` attributes are used by JavaScript for filtering. -->
+    <div class="product-card" 
+         data-gender="men" 
+         data-brand="adidas" 
+         data-size="S M L XL"
+         data-category="clothing">
+
+      <img src="_images/acloth_m1.jpg" alt="Jersey">
+      <h3>Adidas Jersey</h3>
+      <p class="price">R249.99</p>
+     <label for="size1">Size:</label>
+   <select id="size1">
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+    </select> 
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card" 
+         data-gender="men" 
+         data-brand="adidas" 
+         data-category="clothing">
+      <img src="_images/acloth_m2.jpg" alt="Tracksuit">
+      <h3>Adidas tracksuit</h3>
+      <p class="price">R499.99</p>
+      <label for="size2">Size:</label>
+      <select id="size2">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card" 
+         data-gender="men" 
+         data-brand="adidas" 
+         data-category="clothing">
+
+      <img src="_images/acloth_m3.jpg" alt="Tracksuit">
+      <h3>Adidas Tracksuit</h3>
+      <p class="price">R499.99</p>
+        <label for="size3">Size:</label>
+      <select id="size3">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card" 
+         data-gender="men" 
+         data-brand="adidas" 
+         data-category="clothing">
+      <img src="_images/acloth_m4.jpg" alt="shorts">
+      <h3>Adidas Shorts </h3>
+      <p class="price">R179.99</p>
+        <label for="size4">Size:</label>
+      <select id="size4">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+    </div>
+    <!-- Product 5 -->
+    <div class="product-card"
+          data-gender="men"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_m5.jpg" alt="Shorts">
+      <h3>Adidas Shorts</h3>
+      <p class="price">R199.99</p>
+        <label for="size5">Size:</label>
+      <select id="size5">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+      <!-- Product 6 -->
+    <div class="product-card"
+          data-gender="men"
+          data-brand="adidas"
+          data-category="clothing">
+
+      <img src="_images/acloth_m6.jpg" alt="Shorts">
+      <h3>Adidas Shorts</h3>
+      <p class="price">R199.99</p>
+        <label for="size6">Size:</label>
+      <select id="size6">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 7 -->
+    <div class="product-card"
+          data-gender="men"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_m7.jpg" alt="Jacket">
+      <h3>Adidas Jacket</h3>
+      <p class="price">R249.99</p>
+       <label for="size7">Size:</label>
+      <select id="size7">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 8 -->
+    <div class="product-card"
+          data-gender="men"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_m8.jpg" alt="T-Shirt">
+      <h3>Adidas T-Shirt</h3>
+      <p class="price">219.99</p>
+       <label for="size8">Size:</label>
+      <select id="size8">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 9 -->
+    <div class="product-card"
+          data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w1.jpg" alt="Dress">
+      <h3>Adidas Dress</h3>
+      <p class="price">R299.99</p>
+       <label for="size9">Size:</label>
+      <select id="size9">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+     </div>
+
+
+      <!-- Product 10 -->
+    <div class="product-card"
+          data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w2.jpg" alt="skirt">
+      <h3>Adidas Skirt</h3>
+      <p class="price">R249.99</p>
+       <label for="size10">Size:</label>
+      <select id="size10">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+    </div>
+      <!-- Product 11 -->
+    <div class="product-card"
+          data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w3.jpg" alt="top">
+      <h3>Adidas Top</h3>
+      <p class="price">R219.99</p>
+      
+      <label for="size11">Size:</label>
+      <select id="size11">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 12 -->
+    <div class="product-card"
+      data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+
+      <img src="_images/acloth_w4.jpg" alt="top">
+      <h3>Adidas Top</h3>
+      <p class="price">R219.99</p>
+      . <label for="size12">Size:</label>
+      <select id="size12">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 13 -->
+    <div class="product-card"
+      data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w5.jpg" alt="top">
+      <h3>Adidas Top</h3>
+      <p class="price">R219.99</p>
+       <label for="size13">Size:</label>
+      <select id="size13">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 14 -->
+    <div class="product-card" 
+      data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w6.jpg" alt="Jacket">
+      <h3>Adidas Jacket</h3>
+      <p class="price">R249.99</p>
+        <label for="size14">Size:</label>
+      <select id="size14">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 15 -->
+    <div class="product-card" 
+      data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w7.jpg" alt="Pants">
+      <h3>Adidas Pants</h3>
+      <p class="price">R219.99</p>
+      <label for="size15">Size:</label>
+      <select id="size15">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 16 -->
+    <div class="product-card" 
+      data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w8.jpg" alt="shorts and top">
+      <h3>Adidas Shorts and Top set</h3>
+      <p class="price">R299.99</p>
+      <label for="size16">Size:</label>
+      <select id="size16">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 17 -->
+    <div class="product-card" 
+      data-gender="women"
+          data-brand="adidas"
+          data-category="clothing">
+      <img src="_images/acloth_w9.jpg" alt="Tracksuit">
+      <h3>Adidas Tracksuit</h3>
+      <p class="price">R299.99</p>
+      <label for="size17">Size:</label>
+      <select id="size17">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 18 -->
+    <div class="product-card" 
+      data-gender="men"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_m1.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R499.99</p>
+      <label for="size18">Size:</label>
+      <select id="size18">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+      <!-- Product 19 -->
+    <div class="product-card" 
+     data-gender="men"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_m2.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R1499.99</p>
+          <label for="size19">Size:</label>
+      <select id="size19">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 20 -->
+    <div class="product-card" 
+     data-gender="men"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_m3.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R799.99</p>
+      
+      <label for="size20">Size:</label>
+      <select id="size20">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 21 -->
+    <div class="product-card" 
+     data-gender="men"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_m4.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R899.99</p>
+            <label for="size21">Size:</label>
+      <select id="size21">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 22 -->
+    <div class="product-card" 
+     data-gender="men"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_m5.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R899.99</p>
+           <label for="size22">Size:</label>
+      <select id="size22">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 23 -->
+    <div class="product-card" 
+     data-gender="men"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_m6.jpg" alt="sandals">
+      <h3>Adidas sandals</h3>
+      <p class="price">R499.99</p>
+           <label for="size23">Size:</label>
+      <select id="size23">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+      <!-- Product 24 -->
+    <div class="product-card" 
+        data-gender="women"
+          data-brand="adidas"
+          data-category="footwear">
+      <img src="_images/adidas_w1.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R899.99</p>
+            <label for="size24">Size:</label>
+      <select id="size24">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+      <!-- Product 25 -->
+    <div class="product-card"
+         data-gender="women"
+          data-brand="adidas"
+          data-category="footwear">
+
+      <img src="_images/adidas_w2.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R899.99</p>
+      
+      <label for="size25">Size:</label>
+      <select id="size25">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 26 -->
+    <div class="product-card"
+         data-gender="women"
+          data-brand="adidas"
+          data-category="footwear">
+
+      <img src="_images/adidas_w3.jpg" alt="shoes">
+      <h3>Adidas shoe</h3>
+      <p class="price">R899.99</p>
+         <label for="size26">Size:</label>
+      <select id="size26">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 27 -->
+    <div class="product-card" 
+          data-gender="men"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanm1.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+         <label for="size27">Size:</label>
+      <select id="size27">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 28 -->
+    <div class="product-card" 
+         data-gender="men"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanm2.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+          <label for="size28">Size:</label>
+      <select id="size28">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 29 -->
+    <div class="product-card" 
+        data-gender="men"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanm3.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+      
+      <label for="size29">Size:</label>
+      <select id="size29">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 30 -->
+    <div class="product-card" 
+        data-gender="all"
+          data-brand="adidas"
+          data-category="accessories">
+      <img src="_images/asc_am1.jpg" alt="Hat">
+      <h3>Adidas Hat</h3>
+      <p class="price">R299.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 31 -->
+    <div class="product-card"
+        data-gender="men"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanm5.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+            <label for="size31">Size:</label>
+      <select id="size31">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+      <!-- Product 32 -->
+    <div class="product-card"
+       data-gender="all"
+          data-brand="adidas"
+          data-category="accessories">
+      <img src="_images/asc_am3.jpg" alt="Hand bands">
+      <h3>Adidas Hand Bands</h3>
+      <p class="price">R119.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 33 -->
+    <div class="product-card" 
+      data-gender="women"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanw2.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+      <label for="size33">Size:</label>
+      <select id="size33">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 34 -->
+    <div class="product-card" 
+        data-gender="women"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanw3.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+          <label for="size34">Size:</label>
+      <select id="size34">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 35 -->
+    <div class="product-card"
+      data-gender="women"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanw4.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+         <label for="size35">Size:</label>
+      <select id="size35">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 36 -->
+    <div class="product-card"
+      data-gender="women"
+          data-brand="air jordan"
+          data-category="footwear">
+
+      <img src="_images/air_jordanw5.jpg" alt="shoes">
+      <h3>Air Jordan shoe</h3>
+      <p class="price">R1999.99</p>
+          <label for="size36">Size:</label>
+      <select id="size36">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 37 -->
+    <div class="product-card" 
+      data-gender="all"
+          data-brand="adidas"
+          data-category="accessories">
+      <img src="_images/asc_am4.jpg" alt="Wirst bands  ">
+      <h3>Adidas wirst bands</h3>
+      <p class="price">R299.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 38 -->
+    <div class="product-card"
+         data-gender="all"
+          data-brand="adidas"
+          data-category="accessories">
+      <img src="_images/asc_am5.jpg" alt="Cap  ">
+      <h3>Adidas Cap</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 39 -->
+    <div class="product-card"
+         data-gender="all"
+          data-brand="adidas"
+          data-category="accessories">
+      <img src="_images/asc_am6.jpg" alt="Cap ">
+      <h3>Adidas Cap</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+
+      <!-- Product 40 -->
+    <div class="product-card"
+              data-gender="all"
+          data-brand="adidas"
+          data-category="accessories">
+      <img src="_images/asc_am7.jpg" alt="Head band">
+      <h3>Adidas head bands</h3>
+      <p class="price">R199.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 41 -->
+    <div class="product-card"
+         data-gender="men"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm1.jpg" alt="Cap ">
+      <h3>Air Jordan Cap</h3>
+      <p class="price">R799.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 42 -->
+    <div class="product-card"
+         data-gender="men"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm2.jpg" alt="Cap ">
+      <h3>Air Jordan Cap</h3>
+      <p class="price">R799.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 43 -->
+    <div class="product-card"
+         data-gender="men"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm3.jpg" alt="Head band ">
+      <h3>Air Jordan Head Band</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 44 -->
+    <div class="product-card"
+             data-gender="men"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm4.jpg" alt="Head band   ">
+      <h3>Air Jordan Head Band</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 45 -->
+    <div class="product-card"
+         data-gender="all"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm5.jpg" alt="Hat ">
+      <h3>Air Jordan Hat</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 46 -->
+    <div class="product-card"
+         data-gender="all"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm6.jpg" alt="Bag ">
+      <h3>Air Jordan Cap</h3>
+      <p class="price">R1199.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 47 -->
+    <div class="product-card"
+         data-gender="all"
+          data-brand="air jordan"
+          data-category="accessories">
+      <img src="_images/asc_jm7.jpg" alt="Bag">
+      <h3>Air Jordan Cap</h3>
+      <p class="price">R1199.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 48 -->
+    <div class="product-card"
+         data-gender="men"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm1.jpg" alt="Cap ">
+      <h3>Nike Cap</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 49 -->
+    <div class="product-card"
+              data-gender="men"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm2.jpg" alt="Wirst bands ">
+      <h3>Nike Wirst Bands</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 50 -->
+    <div class="product-card" 
+          data-gender="men"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm3.jpg" alt="Wirst bands ">
+      <h3>Nike Wirst Bands</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 51 -->
+    <div class="product-card"
+          data-gender="men"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm4.jpg" alt="Head band ">
+      <h3>Nike Head Band</h3>
+      <p class="price">R399.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 52 -->
+    <div class="product-card" 
+          data-gender="all"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm5.jpg" alt="Hand bands   ">
+      <h3>Nike Hand Bands</h3>
+      <p class="price">R129.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 53 -->
+    <div class="product-card"
+          data-gender="all"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm6.jpg" alt="socks ">
+      <h3>Nike Socks 3 pairs</h3>
+      <p class="price">R299.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 54 -->
+    <div class="product-card"
+          data-gender="women"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm7.jpg" alt="Cap ">
+      <h3>Nike Cap</h3>
+      <p class="price">R499.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 55 -->
+    <div class="product-card"
+          data-gender="women"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm8.jpg" alt="Cap ">
+      <h3>Nike Cap</h3>
+      <p class="price">R499.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 56 -->
+    <div class="product-card" 
+          data-gender="women"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm9.jpg" alt="Wirst bands ">
+      <h3>Nike Wirst Bands</h3>
+      <p class="price">R299.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 57 -->
+    <div class="product-card"
+          data-gender="all"
+          data-brand="nike"
+          data-category="accessories">
+      <img src="_images/asc_nm10.jpg" alt="Bag ">
+      <h3>Nike Bag</h3>
+      <p class="price">R799.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 58 -->
+    <div class="product-card"
+          data-gender="all"
+          data-brand="puma"
+          data-category="accessories">
+      <img src="_images/asc_pm4.jpg" alt="wirst bands ">
+      <h3>Puma wirst bands</h3>
+      <p class="price">R199.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 59 -->
+    <div class="product-card"
+           data-gender="all"
+          data-brand="puma"
+          data-category="accessories">
+      <img src="_images/asc_pm5.jpg" alt=" Bag">
+      <h3>Puma Bag</h3>
+      <p class="price">R599.99</p>
+      <button>Add to Cart</button>
+   </div>
+        <!-- Product 60 -->
+    <div class="product-card"
+           data-gender="all"
+          data-brand="puma"
+          data-category="accessories">
+      <img src="_images/asc_pm6.jpg" alt=" Bag">
+      <h3>Puma Bag</h3>
+      <p class="price">R699.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 61 -->
+    <div class="product-card"
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m1.jpg" alt=" Shorts">
+      <h3>Nike shorts</h3>
+      <p class="price">R499.99</p>
+      
+      <label for="size61">Size:</label>
+      <select id="size61">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 62 -->
+    <div class="product-card" 
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m2.jpg" alt=" Shorts">
+      <h3>Nike shorts</h3>
+      <p class="price">R499.99</p>
+         <label for="size62">Size:</label>
+      <select id="size62">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 63 -->
+    <div class="product-card"
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m3.jpg" alt=" Tracksuit">
+      <h3>Nike Tracksuit</h3>
+      <p class="price">R999.99</p>
+          <label for="size63">Size:</label>
+      <select id="size63">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 64 -->
+    <div class="product-card"
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m5.jpg" alt=" Pants">
+      <h3>Nike Pants</h3>
+      <p class="price">R599.99</p>
+         <label for="size64">Size:</label>
+      <select id="size64">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 65 -->
+    <div class="product-card"
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m6.jpg" alt=" Shorts and T-Shirt">
+      <h3>Nike shorts and t-shirt</h3>
+      <p class="price">R599.99</p>
+        <label for="size65">Size:</label>
+      <select id="size65">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 66 -->
+    <div class="product-card" 
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m7.jpg" alt=" T-shirt">
+      <h3>Nike T-shirt</h3>
+      <p class="price">R499.99</p>
+      
+      <label for="size66">Size:</label>
+      <select id="size66">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 67 -->
+    <div class="product-card"
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m8.jpg" alt=" Shorts and T-Shirt">
+      <h3>Nike shorts and t-shirt</h3>
+      <p class="price">R599.99</p>
+         <label for="size67">Size:</label>
+      <select id="size67">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 68 -->
+    <div class="product-card"
+           data-gender="men"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_m9.jpg" alt=" T-Shirt">
+      <h3>Nike T-shirt</h3>
+      <p class="price">R499.99</p>
+          <label for="size68">Size:</label>
+      <select id="size68">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+         <!-- Product 69 -->
+      <div class="product-card"
+           data-gender="women"
+          data-brand="nike"
+          data-category="clothing">
+
+      <img src="_images/cloth_w1.jpg" alt="Jersey">
+      <h3>Nike Jersey</h3>
+      <p class="price">R499.99</p>
+          <label for="size69">Size:</label>
+      <select id="size69">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+         <!-- Product 70 -->
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w2.jpg" alt=" Shorts and T-shirt">
+      <h3>Nike Shorts and T-shirt</h3>
+      <p class="price">R399.99</p>
+         <label for="size70">Size:</label>
+            <select id="size70">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+
+  </div>
+         <!-- Product 71 -->
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="air jordan"   
+            data-category="footwear">
+
+            <img src="_images/air_jordanm4.jpg" alt=" Shoes">
+      <h3>Nike Air Jordans</h3>
+      <p class="price">R2999.99</p>
+                <label for="size71">Size:</label>
+      <select id="size71">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+          <!-- Product 72 -->
+
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="air jordan"   
+            data-category="footwear">
+
+            <img src="_images/air_jordanw1.jpg" alt=" Shoes">
+      <h3>Nike Air Jordan</h3>
+      <p class="price">R2449.99</p>
+              <label for="size72">Size:</label>
+      <select id="size72">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 73 -->
+
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="adidas"   
+            data-category="accessories">
+
+            <img src="_images/asc_am2.jpg" alt=" Hat">
+      <h3>Adidas Hat</h3>
+      <p class="price">R249.99</p>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 74 -->
+
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="nike"   
+            data-category="accessories">
+            
+            <img src="_images/asc_nm11.jpg" alt=" Bag">
+      <h3>Nike Bag</h3>
+      <p class="price">R1199.99</p>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 75 -->
+
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="puma"   
+            data-category="accessories">
+
+            <img src="_images/asc_pm3.jpg" alt=" Socks">
+      <h3>Puma socks</h3>
+      <p class="price">R399.99</p>
+              <label for="size75">Size:</label>
+      <select id="size75">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 76 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="accessories">
+            <img src="_images/asc_pm2.jpg" alt=" Hat">
+      <h3>Puma Hat</h3>
+      <p class="price">R449.99</p>
+      <button>Add to Cart</button>
+   </div>
+      <!-- Product 77 -->
+   
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_m4.jpg" alt="Tracksuit">
+      <h3>Nike Tracksuit</h3>
+      <p class="price">R799.99</p>
+        <label for="size77">Size:</label>
+            <select id="size77">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 78 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w3.jpg" alt="Jacket">
+      <h3>Nike Jacket</h3>
+      <p class="price">R549.99</p>
+        <label for="size78">Size:</label>
+            <select id="size78">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 79 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w4.jpg" alt="Shirt">
+      <h3>Nike Shirt</h3>
+      <p class="price">R249.99</p>
+        <label for="size79">Size:</label>
+            <select id="size79">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 80 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w5.jpg" alt=" Shorts">
+      <h3>Nike Shorts</h3>
+      <p class="price">R449.99</p>
+        <label for="size80">Size:</label>
+            <select id="size80">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+
+    <!-- Product 81 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w6.jpg" alt=" Top">
+      <h3>Nike Top</h3>
+      <p class="price">R449.99</p>
+        <label for="size81">Size:</label>
+            <select id="size81">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 82 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w7.jpg" alt=" Skirt">
+      <h3>Nike Skirt</h3>
+      <p class="price">R449.99</p>
+        <label for="size82">Size:</label>
+            <select id="size82">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 83 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w8.jpg" alt=" Dress">
+      <h3>Nike Dress</h3>
+      <p class="price">R549.99</p>
+       <label for="size83">Size:</label>
+            <select id="size83">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 84 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w9.jpg" alt="Vest">
+      <h3>Nike Vest</h3>
+      <p class="price">R449.99</p>
+       <label for="size84">Size:</label>
+            <select id="size84">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 85 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w10.jpg" alt="Pants">
+      <h3>Nike Training Pants</h3>
+      <p class="price">R599.99</p>
+       <label for="size85">Size:</label>
+            <select id="size85">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 86 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="clothing">
+
+            <img src="_images/cloth_w11.jpg" alt=" Dress">
+      <h3>Nike Dress</h3>
+      <p class="price">R699.99</p>
+       <label for="size86">Size:</label>
+            <select id="size86">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 87 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m1.jpg" alt="Shirt">
+      <h3>Air Jordan T-Shirt</h3>
+      <p class="price">R799.99</p>
+       <label for="size87">Size:</label>
+            <select id="size87">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 88 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m2.jpg" alt="Shirt">
+      <h3>Air Jordan T-Shirt</h3>
+      <p class="price">R799.99</p>
+       <label for="size88">Size:</label>
+            <select id="size88">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 89 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m3.jpg" alt="Shorts">
+      <h3>Air Jordan Shorts</h3>
+      <p class="price">R899.99</p>
+       <label for="size89">Size:</label>
+            <select id="size89">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 90 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m4.jpg" alt="Shorts">
+      <h3>Air Jordan Shorts</h3>
+      <p class="price">R899.99</p>
+       <label for="size90">Size:</label>
+            <select id="size90">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 91 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m5.jpg" alt="Tracksuit">
+      <h3>Air Jordan Tracksuit</h3>
+      <p class="price">R1999.99</p>
+        <label for="size91">Size:</label>
+            <select id="size91">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 92 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m6.jpg" alt="Jersey">
+      <h3>Air Jordan Jersey</h3>
+      <p class="price">R1799.99</p> 
+       <label for="size92">Size:</label>
+            <select id="size92">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 93 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_m1.jpg" alt="Shirt">
+      <h3>Air Jordan T-Shirt</h3>
+      <p class="price">R799.99</p>
+        <label for="size93">Size:</label>
+            <select id="size93">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 94 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_w1.jpg" alt="Jersey">
+      <h3>Air Jordan Jersey</h3>
+      <p class="price">R999.99</p>
+        <label for="size94">Size:</label>
+            <select id="size94">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 95 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_w2.jpg" alt="Shirt">
+      <h3>Air Jordan Shirt</h3>
+      <p class="price">R799.99</p>
+        <label for="size95">Size:</label>
+            <select id="size95">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 96 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_w3.jpg" alt="Shirt">
+      <h3>Air Jordan Shirt</h3>
+      <p class="price">R799.99</p>
+        <label for="size96">Size:</label>
+            <select id="size96">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 97 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_w4.jpg" alt="Vest">
+      <h3>Air Jordan Vest</h3>
+      <p class="price">R599.99</p>
+        <label for="size97">Size:</label>
+            <select id="size97">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 98 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="air jordan"   
+            data-category="clothing">
+
+            <img src="_images/jcloth_w5.jpg" alt="Vest">
+      <h3>Air Jordan Vest</h3>
+      <p class="price">R599.99</p>
+        <label for="size98">Size:</label>
+            <select id="size98">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 99 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="air jordan"   
+            data-category="accessories">
+            <img src="_images/jordan_2.jpeg" alt="Cap">
+      <h3>Air Jordan Cap</h3>
+      <p class="price">R1229.99</p>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 100 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men1.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R1999.99</p>
+               <label for="size100">Size:</label>
+      <select id="size100">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 101 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men2.jpg" alt="Shoes">
+      <h3>Nike Bmw shoes</h3>
+      <p class="price">R2999.99</p>
+               <label for="size101">Size:</label>
+      <select id="size101">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 102 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men3.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R1999.99</p>
+       <label for="size102">Size:</label>
+      <select id="size102">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 103 -->
+
+      <div class="product-card"
+           data-gender="men"  
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men4.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R1599.99</p>
+          <label for="size103">Size:</label>
+      <select id="size103">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 104 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men5.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2599.99</p>
+          <label for="size104">Size:</label>
+      <select id="size104">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 105 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men6.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2199.99</p>
+          <label for="size105">Size:</label>
+      <select id="size105">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 106 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men7.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2199.99</p>
+          <label for="size106">Size:</label>
+      <select id="size106">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 107 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men8.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2599.99</p>
+          <label for="size107">Size:</label>
+      <select id="size107">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 108 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men9.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2499.99</p>
+          <label for="size108">Size:</label>
+      <select id="size108">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 109 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_men10.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2299.99</p>
+          <label for="size109">Size:</label>
+      <select id="size109">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 110 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women1.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2299.99</p>
+          <label for="size110">Size:</label>
+      <select id="size110">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 111 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women2.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2199.99</p>
+            <label for="size111">Size:</label>
+      <select id="size111">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 112 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women3.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2599.99</p>
+            <label for="size112">Size:</label>
+      <select id="size112">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 113 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women4.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2299.99</p>
+            <label for="size113">Size:</label>
+      <select id="size113">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 114 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women5.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2599.99</p>
+            <label for="size114">Size:</label>
+      <select id="size114">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 115 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women6.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2299.99</p>
+        <label for="size115">Size:</label>
+      <select id="size115">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 116 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women7.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2699.99</p>
+            <label for="size116">Size:</label>
+      <select id="size116">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 117 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women8.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2799.99</p>
+            <label for="size117">Size:</label>
+      <select id="size117">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 118 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+            <img src="_images/nike_women9.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2499.99</p>
+            <label for="size118">Size:</label>
+      <select id="size118">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+ <!-- Product 119 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="nike"   
+            data-category="footwear">
+
+            <img src="_images/nike_women10.jpg" alt="Shoes">
+      <h3>Nike shoes</h3>
+      <p class="price">R2299.99</p>
+            <label for="size119">Size:</label>
+      <select id="size119">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 120 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m1.jpg" alt="Shirt">
+      <h3>Puma T-Shirt</h3>
+      <p class="price">R999.99</p>
+      
+            <label for="size120">Size:</label>
+            <select id="size120">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 121 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m2.jpg" alt="Shirt">
+      <h3>Puma BMW Golfer</h3>
+      <p class="price">R1499.99</p>
+           <label for="size121">Size:</label>
+            <select id="size121">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 122 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m3.jpg" alt="Shirt">
+      <h3>Puma T-Shirt</h3>
+      <p class="price">R599.99</p>
+            <label for="size122">Size:</label>
+            <select id="size122">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 123 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m4.jpg" alt="Shorts">
+      <h3>Puma Shorts</h3>
+      <p class="price">R799.99</p>
+            <label for="size123">Size:</label>
+            <select id="size123">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+   <!-- Product 124 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m5.jpg" alt="Shorts">
+      <h3>Puma Shorts</h3>
+      <p class="price">R799.99</p>
+            <label for="size124">Size:</label>
+            <select id="size124">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+   <!-- Product 125 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m6.jpg" alt="Jacket">
+      <h3>Puma Jacket</h3>
+      <p class="price">R1099.99</p>
+           <label for="size125">Size:</label>
+            <select id="size125">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+   <!-- Product 126 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m7.jpg" alt="Shirt">
+      <h3>Puma Shirt</h3>
+      <p class="price">R799.99</p>
+           <label for="size126">Size:</label>
+            <select id="size126">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+   <!-- Product 127 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m8.jpg" alt="Shirt">
+      <h3>Puma Mercdes Shirt</h3>
+      <p class="price">R1399.99</p>
+           <label for="size127">Size:</label>
+            <select id="size127">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+   <!-- Product 128 -->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_m9.jpg" alt="Golfer">
+      <h3>Puma Ferrari Golfer</h3>
+      <p class="price">R1799.99</p>
+           <label for="size128">Size:</label>
+            <select id="size128">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+   <!-- Product 129 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w1.jpg" alt="Top">
+      <h3>Puma Top</h3>
+      <p class="price">R599.99</p>
+           <label for="size129">Size:</label>
+            <select id="size129">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 130 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w2.jpg" alt="Pants">
+      <h3>Puma Pants</h3>
+      <p class="price">R399.99</p>
+           <label for="size130">Size:</label>
+            <select id="size130">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 131 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w3.jpg" alt="Top">
+      <h3>Puma Top</h3>
+      <p class="price">R499.99</p>
+           <label for="size131">Size:</label>
+            <select id="size131">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 132 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w4.jpg" alt="Top">
+      <h3>Puma Top</h3>
+      <p class="price">R299.99</p>
+           <label for="size132">Size:</label>
+            <select id="size132">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 133 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w5.jpg" alt="Top">
+      <h3>Puma long sleeve Top</h3>
+      <p class="price">R799.99</p>
+           <label for="size133">Size:</label>
+            <select id="size133">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 134 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w6.jpg" alt="Top">
+      <h3>Puma Top</h3>
+      <p class="price">R299.99</p>
+           <label for="size134">Size:</label>
+            <select id="size134">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 135 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w7.jpg" alt="Pants">
+      <h3>Puma Pants</h3>
+      <p class="price">R399.99</p>
+           <label for="size135">Size:</label>
+            <select id="size135">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 136 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w8.jpg" alt="Dress">
+      <h3>Puma Dress</h3>
+      <p class="price">R799.99</p>
+           <label for="size136">Size:</label>
+            <select id="size136">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+  <!-- Product 137 -->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="clothing">
+
+            <img src="_images/pcloth_w1.jpg" alt="Top">
+      <h3>Puma long sleeve Top</h3>
+      <p class="price">R399.99</p>
+           <label for="size137">Size:</label>
+            <select id="size137">
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+      <button>Add to Cart</button>
+   </div>
+  
+     <!-- Product 138 -->
+
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_1.jpg" alt="Shoes">
+      <h3>Puma Shoes</h3>
+      <p class="price">R1299.99</p>
+      <label for="size138">Size:</label>
+      <select id="size138">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+   
+     <!-- Product 139 -->
+
+      <div class="product-card"
+           data-gender="all"   
+            data-brand="puma"   
+            data-category="accessories">
+            <img src="_images/puma_2.jpg" alt="Cap">
+      <h3>Puma Cap</h3>
+      <p class="price">R499.99</p>
+      <button>Add to Cart</button>
+   </div>
+   
+     <!-- Product 140-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_men1.jpg" alt="Shoes">
+      <h3>Puma shoes</h3>
+      <p class="price">R1599.99</p>
+      <label for="size140">Size:</label>
+      <select id="size140">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+    <!-- Product 141-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_men2.jpg" alt="Shoes">
+      <h3>Puma AMG shoes</h3>
+      <p class="price">R1799.99</p>
+      <label for="size141">Size:</label>
+      <select id="size141">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+    <!-- Product 142-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_men3.jpg" alt="Shoes">
+      <h3>Puma shoes</h3>
+      <p class="price">R1599.99</p>
+      <label for="size142">Size:</label>
+      <select id="size142">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 143-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_men4.jpg" alt="Shoes">
+      <h3>Puma shoes</h3>
+      <p class="price">R1199.99</p>
+       <label for="size143">Size:</label>
+      <select id="size143">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+ <!-- Product 144-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_men5.jpg" alt="Shoes">
+      <h3>Puma shoes</h3>
+      <p class="price">R1299.99</p>
+      <label for="size144">Size:</label>
+      <select id="size144">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+ <!-- Product 145-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_sandalm.jpg" alt="sandals">
+      <h3>Puma sandals</h3>
+      <p class="price">R699.99</p>
+      <label for="size145">Size:</label>
+      <select id="size145">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 146-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_sandalm2.jpg" alt="sandals">
+      <h3>Puma sandals</h3>
+      <p class="price">R249.99</p>
+       <label for="size146">Size:</label>
+      <select id="size146">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 147-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_sandalw.jpg" alt="sandals">
+      <h3>Puma sandals</h3>
+      <p class="price">R699.99</p>
+     <label for="size147">Size:</label>
+      <select id="size147">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 148-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_sandalw2.jpg" alt="sandals">
+      <h3>Puma sandals</h3>
+      <p class="price">R699.99</p>
+      <label for="size148">Size:</label>
+      <select id="size148">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+     <!-- Product 149-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_women1.jpg" alt="shoes">
+      <h3>Puma Shoes</h3>
+      <p class="price">R999.99</p>
+     <label for="size149">Size:</label>
+      <select id="size149">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 150-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_women2.jpg" alt="shoes">
+      <h3>Puma Shoes</h3>
+      <p class="price">R1999.99</p>
+      <label for="size150">Size:</label>
+      <select id="size150">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+    <!-- Product 151-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_women3.jpg" alt="shoes">
+      <h3>Puma Shoes</h3>
+      <p class="price">R1999.99</p>
+       <label for="size151">Size:</label>
+      <select id="size151">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+       <!-- Product 152-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_women4.jpg" alt="shoes">
+      <h3>Puma Shoes</h3>
+      <p class="price">R1299.99</p>
+     <label for="size152">Size:</label>
+      <select id="size152">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+       <!-- Product 153-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="puma"   
+            data-category="footwear">
+            <img src="_images/puma_women5.jpg" alt="shoes">
+      <h3>Puma Shoes</h3>
+      <p class="price">R999.99</p>
+            <label for="size153">Size:</label>
+      <select id="size153">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+   
+       <!-- Product 183-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_m1.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1499.99</p>
+            <label for="size183">Size:</label>
+      <select id="size183">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+          <!-- Product 184-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_m2.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1699.99</p>
+            <label for="size184">Size:</label>
+      <select id="size184">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+          <!-- Product 185-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_m3.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1399.99</p>
+            <label for="size185">Size:</label>
+      <select id="size185">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+          <!-- Product 186-->
+
+      <div class="product-card"
+           data-gender="men"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_m4.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1499.99</p>
+            <label for="size186">Size:</label>
+      <select id="size186">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+          <!-- Product 187-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_w1.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1199.99</p>
+            <label for="size187">Size:</label>
+      <select id="size187">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+             <!-- Product 188-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_w2.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1799.99</p>
+            <label for="size188">Size:</label>
+      <select id="size188">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+             <!-- Product 189-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_w3.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1399.99</p>
+            <label for="size189">Size:</label>
+      <select id="size189">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+             <!-- Product 190-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_w4.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1699.99</p>
+            <label for="size190">Size:</label>
+      <select id="size190">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+
+             <!-- Product 191-->
+
+      <div class="product-card"
+           data-gender="women"   
+            data-brand="adidas"   
+            data-category="sambae">
+            <img src="_images/sambae_w6.jpg" alt="shoes">
+      <h3>Sambae Adidas Shoe</h3>
+      <p class="price">R1699.99</p>
+            <label for="size191">Size:</label>
+      <select id="size191">
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+      </select>
+      <button>Add to Cart</button>
+   </div>
+</div>
+
+</main> 
+<!-- Common footer for the website -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="./_images/studiologo.jpg" alt="Studio 88 Logo">
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+      <h3>SIGN UP TO OUR NEWSLETTER TO STAY UPDATED </h3>
+      <form id="newsletterForm">
+        <input type="email" id="emailInput" placeholder="Enter your email" required>
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <p id="newsletterMessage"></p>
+    </div>
+
+    <!-- Links & Social Wrapper -->
+    <div class="footer-right-content">
+      <!-- Links -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>About Us</h4>
+          <p>Studio 88 is South Africa’s largest branded fashion retailer, bringing you the latest styles from top international sports and lifestyle brands.</p>
+          <a href="about.html">Learn more</a>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <p>Need assistance? Get in touch with our team for store details, online orders, or general inquiries.</p>
+          <a href="contact.html">Get in touch</a>
+        </div>
+      </div>
+      <!-- Social Media -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/studio88clothing/?_rdc=2&_rdr#" target="_blank">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/studio88_branded/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/Studio_88" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class= 'rights' >
+    <p>&copy; 2025 Studio 88. All Rights Reserved.</p>
+    
+  </div>
+</footer>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+ <!-- JavaScript files for interactivity and authentication -->
+ <script src="js/auth.js"></script>
+ <script src="js/script.js"></script>
+
+</body>
+</html>
