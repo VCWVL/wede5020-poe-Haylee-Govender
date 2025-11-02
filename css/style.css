@@ -550,6 +550,13 @@ main {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.shop-now:hover {
+    background-color: #008b09; /* A nice green for hover */
+    transform: translateY(-2px); /* A subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Previous and Next arrow buttons */
@@ -1826,6 +1833,12 @@ h1, h2 {
 
 .store-item:hover {
   background: #f0f0f0;
+}
+
+.store-item.active {
+  background-color: #e0f2f1; /* A light teal background */
+  border-left: 4px solid #0f5c5c; /* A solid teal border on the left */
+  font-weight: bold;
 }
 
 .store-item h3 {

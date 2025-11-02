@@ -142,6 +142,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // --- NEWSLETTER SUBSCRIPTION LOGIC ---
+  const newsletterForm = document.getElementById("newsletterForm");
+  if (newsletterForm) {
+    const emailInput = document.getElementById("emailInput");
+    const message = document.getElementById("newsletterMessage");
+
+    newsletterForm.addEventListener("submit", function (e) {
+      // Prevent the default form submission
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      // Regex for basic email validation
+      const regex = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+
+      if (!regex.test(email)) {
+        message.textContent = "❌ Please enter a valid email address.";
+        message.style.color = "red";
+      } else {
+        message.textContent = "✅ Thank you for subscribing!";
+        message.style.color = "limegreen";
+        // Clear the input field after successful submission
+        newsletterForm.reset();
+      }
+    });
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -202,10 +227,22 @@ document.addEventListener("DOMContentLoaded", function() {
       `;
 
       // Click updates iframe to show store location
-     li.addEventListener("click", () => {
-  const [lat, lng] = store.mapsUrl.match(/q=(-?\d+\.\d+),(-?\d+\.\d+)/).slice(1);
-  mapFrame.src = `https://www.google.com/maps?q=${lat},${lng}&hl=en&z=15&output=embed`;
-});
+      li.addEventListener("click", () => {
+        // Remove 'active' class from all other items
+        document.querySelectorAll('.store-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        // Add 'active' class to the clicked item
+        li.classList.add('active');
+
+        // Use a more robust regex to find coordinates in the URL
+        const match = store.embedUrl.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+        if (match && match.length >= 3) {
+          const [lat, lng] = [match[1], match[2]];
+          // Ensure the map is in English and embedded correctly
+          mapFrame.src = `https://maps.google.com/maps?q=${lat},${lng}&hl=en&z=15&output=embed`;
+        }
+      });
 
       list.appendChild(li);
     });
