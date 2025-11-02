@@ -144,6 +144,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  // --- ADD TO CART LOGIC ---
+  // This logic should be available on all pages with products
+  const productGrids = document.querySelectorAll('.product-grid, .soccer-grid, .new-grid, .sales-grid');
+
+  productGrids.forEach(grid => {
+    grid.addEventListener('click', (e) => {
+      // Check if an "Add to Cart" button was clicked
+      if (e.target.tagName === 'BUTTON' && e.target.textContent === 'Add to Cart') {
+        const card = e.target.closest('.product-card, .soccer-card, .new-card, .sales-card');
+        
+        // Check if user is logged in before adding to cart
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        if (!loggedInUser) {
+          alert('Please log in to add items to your cart.');
+          window.location.href = 'login.html'; // Redirect to login page
+          return; // Stop the function
+        }
+        if (card) {
+          const product = {
+            name: card.querySelector('h3').textContent,
+            price: parseFloat(card.querySelector('.price').textContent.replace('R', '')),
+            image: card.querySelector('img').src,
+            size: card.querySelector('select') ? card.querySelector('select').value : null
+          };
+          
+          // This function is defined in cart.js
+          if(typeof addToCart === 'function') {
+            addToCart(product);
+          }
+        }
+      }
+    });
+  });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   const list = document.getElementById("store-list");
   const select = document.getElementById("province-select");

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- UNIVERSAL HEADER UPDATE ---
     // Check if a user is logged in via sessionStorage
-    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    const loggedInUser = localStorage.getItem('loggedInUser');
     const navUl = document.querySelector('.main-header nav ul');
 
     if (loggedInUser && navUl) {
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         logoutLink.href = '#';
         logoutLink.textContent = 'Logout';
         logoutLink.onclick = () => {
-            // On click, remove user from session and redirect to home
-            sessionStorage.removeItem('loggedInUser');
+            // On click, remove user from storage and redirect to home
+            localStorage.removeItem('loggedInUser');
             window.location.href = 'index.html';
         };
         logoutLi.appendChild(logoutLink);
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (user) {
                 // --- Success ---
                 // Save the logged-in user's data to sessionStorage
-                sessionStorage.setItem('loggedInUser', JSON.stringify(user));
+                localStorage.setItem('loggedInUser', JSON.stringify(user));
                 if (loginMessage) {
                     loginMessage.textContent = "Login successful! Redirecting...";
                     loginMessage.style.color = 'limegreen';
