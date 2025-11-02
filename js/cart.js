@@ -169,19 +169,39 @@ function displayCart() {
             // Clear the cart
             saveCart([]);
 
-            // Display the confirmation message
-            const cartContainer = document.getElementById('cart-items-container');
-            const cartSummary = document.getElementById('cart-summary');
-            
-            // Replace the cart content with a styled confirmation message
-            cartContainer.innerHTML = `
-                <div class="checkout-confirmation">
-                    <h2>Thank You For Your Order!</h2>
-                    <p>Your order for pickup at <strong>${selectedStore}</strong> has been placed successfully.
-                    <br> Your receipt number is: <strong>${receiptNumber}</strong></p>
-                    <p>Please pay for your items at the shop upon collection.</p>
-                </div>`;
-            cartSummary.style.display = 'none'; // Hide the summary box entirely
+            // --- MODAL CONFIRMATION ---
+            // Create and display a modal for the confirmation message.
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <div class="checkout-confirmation">
+                        <h2>Thank You For Your Order!</h2>
+                        <p>Your order for pickup at <strong>${selectedStore}</strong> has been placed successfully.
+                        <br> Your receipt number is: <strong>${receiptNumber}</strong></p>
+                        <p>Please pay for your items at the shop upon collection.</p>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            // Show the modal
+            setTimeout(() => modal.classList.add('show'), 10);
+
+            // Function to close the modal
+            const closeModal = () => {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(modal);
+                    // Re-render the now-empty cart
+                    displayCart();
+                }, 300); // Wait for transition to finish
+            };
+
+            // Close modal when the 'x' is clicked
+            modal.querySelector('.close-button').addEventListener('click', closeModal);
+            // --- END MODAL ---
         });
     }
 }

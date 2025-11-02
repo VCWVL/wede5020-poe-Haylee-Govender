@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- ENQUIRY FORM SUBMISSION LOGIC ---
-  const form = document.getElementById("Enquiry form");
-  if (form) {
+  const enquiryForm = document.getElementById("enquiry-form"); // Corrected ID selector
+  if (enquiryForm) {
     const emailInput = document.getElementById("enquiry-email");
     const message = document.getElementById("form-message");
 
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         message.textContent = " Thank you for your enquiry! We will respond to you shortly.";
         message.style.color = "limegreen";
-        form.reset();
+        enquiryForm.reset();
       }
     });
   }
@@ -167,9 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
   // --- ADD TO CART LOGIC ---
   // This logic should be available on all pages with products
   const productGrids = document.querySelectorAll('.product-grid, .soccer-grid, .new-grid, .sales-grid');
@@ -203,54 +201,104 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+  // --- IMAGE LIGHTBOX GALLERY ---
+  productGrids.forEach(grid => {
+    grid.addEventListener('click', (e) => {
+      // Check if an image inside a card was clicked
+      if (e.target.tagName === 'IMG' && e.target.closest('.product-card, .soccer-card, .new-card, .sales-card')) {
+        e.preventDefault(); // Prevent any default image behavior
+
+        // Create the lightbox structure
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox-modal';
+        lightbox.innerHTML = `
+          <span class="lightbox-close">&times;</span>
+          <img src="${e.target.src}" alt="${e.target.alt}" class="lightbox-content">
+        `;
+        document.body.appendChild(lightbox);
+
+        // Show the lightbox with a fade-in effect
+        setTimeout(() => {
+          lightbox.classList.add('show');
+        }, 10); // Small delay to allow CSS transition
+
+        // Function to close the lightbox
+        const closeLightbox = () => {
+          lightbox.classList.remove('show');
+          // Wait for the fade-out transition to finish before removing the element
+          lightbox.addEventListener('transitionend', () => {
+            if (document.body.contains(lightbox)) {
+              document.body.removeChild(lightbox);
+            }
+          }, { once: true }); // Ensure the event listener is removed after it runs
+        };
+
+        // Close lightbox when the 'x' button is clicked
+        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+
+        // Close lightbox when clicking on the background overlay
+        lightbox.addEventListener('click', (event) => {
+          if (event.target === lightbox) { // Only close if the click is on the overlay itself
+            closeLightbox();
+          }
+        });
+
+        // Close lightbox with the 'Escape' key
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'Escape') {
+            closeLightbox();
+          }
+        }, { once: true }); // The listener is removed after the key is pressed once
+      }
+    });
+  });
+
+  // --- STORE LOCATOR LOGIC ---
   const list = document.getElementById("store-list");
   const select = document.getElementById("province-select");
   const mapFrame = document.getElementById("map-frame");
 
-  function renderStores(filterProvince = "all") {
-    list.innerHTML = "";
-    let filtered = stores;
+  if (list && select && mapFrame) {
+    function renderStores(filterProvince = "all") {
+      list.innerHTML = "";
+      let filtered = stores;
 
-    if (filterProvince.toLowerCase() !== "all") {
-      filtered = stores.filter(s => s.province.toLowerCase() === filterProvince.toLowerCase());
+      if (filterProvince.toLowerCase() !== "all") {
+        filtered = stores.filter(s => s.province.toLowerCase() === filterProvince.toLowerCase());
+      }
+
+      filtered.forEach(store => {
+        const li = document.createElement("li");
+        li.className = "store-item";
+        li.innerHTML = `
+          <h3>${store.name}</h3>
+          <a href="${store.mapsUrl}" target="_blank">Open in Google Maps</a>
+        `;
+
+        // Click updates iframe to show store location
+        li.addEventListener("click", () => {
+          // Remove 'active' class from all other items
+          document.querySelectorAll('.store-item').forEach(item => {
+            item.classList.remove('active');
+          });
+          // Add 'active' class to the clicked item
+          li.classList.add('active');
+
+          // Use the direct embed URL from store.js
+          if (store.embedUrl) {
+            mapFrame.src = store.embedUrl;
+          }
+        });
+
+        list.appendChild(li);
+      });
     }
 
-    filtered.forEach(store => {
-      const li = document.createElement("li");
-      li.className = "store-item";
-      li.innerHTML = `
-        <h3>${store.name}</h3>
-        <a href="${store.mapsUrl}" target="_blank">Open in Google Maps</a>
-      `;
+    // Initial render
+    renderStores();
 
-      // Click updates iframe to show store location
-      li.addEventListener("click", () => {
-        // Remove 'active' class from all other items
-        document.querySelectorAll('.store-item').forEach(item => {
-          item.classList.remove('active');
-        });
-        // Add 'active' class to the clicked item
-        li.classList.add('active');
-
-        // Use a more robust regex to find coordinates in the URL
-        const match = store.embedUrl.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
-        if (match && match.length >= 3) {
-          const [lat, lng] = [match[1], match[2]];
-          // Ensure the map is in English and embedded correctly
-          mapFrame.src = `https://maps.google.com/maps?q=${lat},${lng}&hl=en&z=15&output=embed`;
-        }
-      });
-
-      list.appendChild(li);
-    });
+    // Province filter
+    select.addEventListener("change", e => renderStores(e.target.value));
   }
-
-  // Initial render
-  renderStores();
-
-  // Province filter
-  select.addEventListener("change", e => renderStores(e.target.value));
 });

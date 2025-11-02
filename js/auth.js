@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- UNIVERSAL HEADER UPDATE ---
-    // Check if a user is logged in via sessionStorage
+    // Check if a user is logged in via localStorage
     const loggedInUser = localStorage.getItem('loggedInUser');
     const navUl = document.querySelector('.main-header nav ul');
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (user) {
                 // --- Success ---
-                // Save the logged-in user's data to sessionStorage
+                // Save the logged-in user's data to localStorage
                 localStorage.setItem('loggedInUser', JSON.stringify(user));
                 if (loginMessage) {
                     loginMessage.textContent = "Login successful! Redirecting...";
