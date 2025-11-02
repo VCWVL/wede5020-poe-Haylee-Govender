@@ -622,6 +622,21 @@ main {
   color: #ffffff;
 }
 
+/* Search input in filter bar */
+.filter-bar input[type="text"] {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.filter-bar input[type="text"]:focus {
+  border-color: #DC143C;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+  outline: none;
+}
+
 /* Dropdowns */
 .filter-bar select {
   padding: 8px 12px;
@@ -649,7 +664,8 @@ main {
   }
 
   .filter-bar label,
-  .filter-bar select {
+  .filter-bar select,
+  .filter-bar input[type="text"] {
     width: 100%;
     margin-bottom: 10px;
   }
@@ -788,6 +804,18 @@ main {
   .product-grid {
     grid-template-columns: 1fr; /* 1 per row on mobile */
   }
+}
+
+/* Message for when no products are found after filtering */
+#no-results-message {
+  text-align: center;
+  font-size: var(--h4-size);
+  color: #ffffff;
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #0f5c5c;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 

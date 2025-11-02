@@ -45,6 +45,9 @@
   </section>
   <!-- Filter Bar: Allows users to filter products by gender, brand, and category -->
   <div class="filter-bar">
+    <label for="search">Search:</label>
+    <input type="text" id="search" placeholder="Search by name...">
+
     <label for="gender">Gender:</label>
     <select id="gender">
       <option value="all">All</option>
@@ -3083,6 +3086,9 @@
       <button>Add to Cart</button>
    </div>
 </div>
+
+<!-- Message to show when no products match the filter -->
+<p id="no-results-message" style="display: none;">No products found matching your criteria. Please try a different search or filter combination.</p>
 
 </main> 
 <!-- Common footer for the website -->

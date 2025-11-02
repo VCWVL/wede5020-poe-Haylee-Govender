@@ -48,43 +48,59 @@ document.addEventListener('DOMContentLoaded', () => {
   const genderSelect = document.getElementById('gender');
   const categorySelect = document.getElementById('category');
   const brandSelect = document.getElementById('brand');
+  const searchInput = document.getElementById('search');
   const productCards = document.querySelectorAll('.product-card');
 
   // This function filters products based on the selected dropdown values
   function filterProducts() {
-    const gender = genderSelect.value.toLowerCase();
-    const category = categorySelect.value.toLowerCase();
-    const brand = brandSelect.value.toLowerCase();
+    const gender = genderSelect ? genderSelect.value.toLowerCase() : 'all';
+    const category = categorySelect ? categorySelect.value.toLowerCase() : 'all';
+    const brand = brandSelect ? brandSelect.value.toLowerCase() : 'all';
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    let visibleProductsCount = 0;
 
     productCards.forEach(p => {
       // Get the data attributes from each product card
       const pGender = (p.dataset.gender || '').toLowerCase();
       const pCategory = (p.dataset.category || '').toLowerCase();
       const pBrand = (p.dataset.brand || '').toLowerCase();
+      const pName = (p.querySelector('h3').textContent || '').toLowerCase();
 
       // Determine if the card should be shown based on filter criteria
       const show =
+        (pName.includes(searchTerm)) &&
         (gender === 'all' || pGender === gender || (gender !== 'men' && gender !== 'women' && pGender === 'all')) &&
         (category === 'all' || pCategory === category) &&
         (brand === 'all' || pBrand === brand);
 
       // Show or hide the card
       p.style.display = show ? 'block' : 'none';
+      if (show) {
+        visibleProductsCount++;
+      }
     });
+
+    // Show or hide the 'no results' message
+    if (noResultsMessage) {
+      noResultsMessage.style.display = visibleProductsCount === 0 ? 'block' : 'none';
+    }
   }
 
   // If the filter dropdowns exist, set up the filtering functionality
-  if (genderSelect && categorySelect && brandSelect) {
+  if (productCards.length > 0 && document.getElementById('productGrid')) {
     // Check for filter parameters in the URL (e.g., from homepage links)
     const params = new URLSearchParams(window.location.search);
-    if (params.get('gender')) genderSelect.value = params.get('gender').toLowerCase();
-    if (params.get('category')) categorySelect.value = params.get('category').toLowerCase();
-    if (params.get('brand')) brandSelect.value = params.get('brand').toLowerCase();
+    if (genderSelect && params.get('gender')) genderSelect.value = params.get('gender').toLowerCase();
+    if (categorySelect && params.get('category')) categorySelect.value = params.get('category').toLowerCase();
+    if (brandSelect && params.get('brand')) brandSelect.value = params.get('brand').toLowerCase();
 
     // Add event listeners to the dropdowns to trigger filtering on change
-    genderSelect.addEventListener('change', filterProducts);
-    categorySelect.addEventListener('change', filterProducts);
-    brandSelect.addEventListener('change', filterProducts);
+    if (searchInput) searchInput.addEventListener('input', filterProducts);
+    if (genderSelect) genderSelect.addEventListener('change', filterProducts);
+    if (categorySelect) categorySelect.addEventListener('change', filterProducts);
+    if (brandSelect) brandSelect.addEventListener('change', filterProducts);
 
     // Run the filter function once on page load
     filterProducts();
@@ -120,12 +136,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- ENQUIRY FORM SUBMISSION LOGIC ---
-  const enquiryForm = document.getElementById("enquiry-form"); // Corrected ID selector
+  const enquiryForm = document.getElementById("Enquiry form"); // Corrected ID to match HTML
   if (enquiryForm) {
     const emailInput = document.getElementById("enquiry-email");
     const message = document.getElementById("form-message");
 
-    form.addEventListener("submit", function (e) {
+    enquiryForm.addEventListener("submit", function (e) {
       // Prevent the default form submission which reloads the page
       e.preventDefault();
       const email = emailInput.value.trim();
