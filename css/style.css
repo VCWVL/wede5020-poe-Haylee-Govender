@@ -9,6 +9,21 @@
   box-sizing: border-box;
 }
 
+/* CSS Variables for consistent typography and colors */
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  /* Typography Scale */
+  --h1-size: 2.2rem; /* ~35px */
+  --h2-size: 1.8rem; /* ~29px */
+  --h3-size: 1.5rem; /* ~24px */
+  --h4-size: 1.2rem; /* ~19px */
+  --p-size: 1rem;    /* 16px */
+  --small-text: 0.9rem;
+  --line-height-base: 1.6;
+}
+
 /* ==========================================================================
    Header Styles
    ========================================================================== */
@@ -22,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-primary);
     z-index: 1000; /* Ensure header is on top */
     
 }
@@ -49,7 +64,7 @@
 }
 
 .main-header .brand-title {
-    font-size: 1.5em;
+    font-size: var(--h3-size);
     margin: 0;
 }
 
@@ -138,7 +153,7 @@
    Featured Section (Homepage)
    ========================================================================== */
 .featured-section {
-  background: #f5f5f5;
+  background: #C0C0C0;
   padding: 60px 20px;
   text-align: center;
 }
@@ -197,7 +212,7 @@
 .footer {
   background: #000000;
   color: #fff;
-  padding: 40px 20px;
+  padding: 50px 20px;
   margin-top: 50px;
   font-family: 'Roboto', sans-serif;
   text-align: center;
@@ -237,7 +252,7 @@
 
 .newsletter h3 {
   margin-bottom: 30px;
-  font-size: 1.4rem;
+  font-size: var(--h4-size);
   align-self: center;
   /* Removed margin-right to allow natural centering */
 }
@@ -278,7 +293,7 @@
 
 #newsletterMessage {
   margin-top: 10px;
-  font-size: 0.9rem;
+  font-size: var(--small-text);
 }
 
 /* Wrapper for right-side content in the footer (links and social icons) */
@@ -308,19 +323,19 @@
 
 .footer-column h4 {
   margin-bottom: 10px;
-  font-size: 1.2rem;
+  font-size: var(--h4-size);
   color: #fff;
 }
 
 .footer-column p {
-  font-size: 0.9rem;
   color: #bbb;
+  font-size: var(--small-text);
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .footer-column a {
-  color:#005765;
+  color: #0f5c5c;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
@@ -359,7 +374,7 @@
   height: 40px;
   border-radius: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   font-size: 1.2rem;
   transition: all 0.3s ease;
@@ -412,7 +427,7 @@
 .rights {
   text-align: center;
   margin-top: 50px;
-  font-size: 1rem;
+  font-size: var(--p-size);
   color: #ffffff;
 }
 
@@ -451,7 +466,7 @@ main {
 
 /* ==========================================================================
    Form Styles (Login, Sign Up, Enquiry, Contact)
-   ========================================================================== */
+   ========================================================================== */ 
 .form-container h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -524,7 +539,7 @@ main {
 }
 
 .carousel-content h2 {
-    font-size: 2em;
+    font-size: var(--h1-size);
     margin-bottom: 10px;
 }
 
@@ -586,7 +601,7 @@ main {
   gap: 20px;
   margin: 20px 0;
   padding: 15px 20px;
-  background-color: #03363e;
+  background-color: #0f5c5c;
   border-radius: 10px;
   align-items: center;
   box-shadow: 0 2px 8px rgba(48, 174, 191, 0.05);
@@ -605,7 +620,7 @@ main {
   padding: 8px 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  outline: none;
+  outline: 2px solid transparent; /* For focus state */
   font-size: 14px;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -614,8 +629,9 @@ main {
 /* Hover & Focus */
 .filter-bar select:hover,
 .filter-bar select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  border-color: #DC143C;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+  outline-color: rgba(0,123,255,0.25);
 }
 
 /* Responsive: Stack on small screens */
@@ -646,7 +662,7 @@ main {
 
 /* Individual product card styling */
 .product-card {
-  background-color: #79bdad;
+  background-color:#C0C0C0;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(34, 237, 200, 0.08);
   overflow: hidden;
@@ -675,16 +691,16 @@ main {
 
 /* Product Title */
 .product-card h3 {
-  font-size: 16px;
-  color: #333;
+  font-size: var(--p-size);
+  color: #000000;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
 /* Price */
-.product-card .price {
+.product-card .price { 
   font-size: 16px;
-  color: #e63946 ;
+  color: #DC143C;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -695,13 +711,13 @@ main {
   font-size: 14px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  outline: none;
+  outline: 2px solid transparent;
   margin-bottom: 10px;
 }
 
 /* Add to Cart Button */
 .product-card button {
-  background-color: #005765;
+  background-color:  #0f5c5c;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -709,12 +725,12 @@ main {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .product-card button:hover {
-  background: #05880e;
-
+  background: #008b09;
+  transform: translateY(-2px);
 }
 
 /* Fade & Scale Transition for Filtering */
@@ -768,12 +784,12 @@ main {
 /* Categories Section */
 .categories-section {
   padding: 60px 20px;
-  background-color: #f5f5f5;
+  background-color: #C0C0C0;
   text-align: center;
 }
 
 .categories-section .categories-title {
-  font-size: 32px;
+  font-size: calc(var(--h1-size) * 0.9); /* Slightly smaller than H1 */
   font-weight: 700;
   color: #000000;
   margin-bottom: 40px;
@@ -815,7 +831,7 @@ main {
 }
 
 .category-card h3 {
-  font-size: 20px;
+  font-size: var(--h4-size);
   font-weight: 600;
   color: #ffffff;
   margin: 15px 0;
@@ -883,7 +899,7 @@ main {
 
 /* Soccer Card Styling */
 .soccer-card {
-  background: #79bdad;
+  background: #C0C0C0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
@@ -910,15 +926,15 @@ main {
 
 /* Text Styling for soccer cards */
 .soccer-card h3 {
-  font-size: 1.1rem;
+  font-size: var(--p-size);
   margin: 12px 0 6px;
-  color: #333;
+  color: #000000;
 }
 
 .soccer-card .price {
-  font-size: 1.2rem;
+  font-size: var(--h4-size);
   font-weight: bold;
-  color: #e63946;
+  color: #DC143C;
   margin-bottom: 12px;
 }
 
@@ -928,25 +944,25 @@ main {
   margin: 6px 0 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  outline: none;
+  outline: 2px solid transparent;
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: var(--small-text);
 }
 
 /* Add to Cart Button for soccer cards */
 .soccer-card button {
-  background: #03363e;
+  background: #0f5c5c;
   color: #fff;
-  border: none;
+  border: none; 
   padding: 10px 18px;
   border-radius: 8px;
   cursor: pointer;
-  transition:  0.3s ease;
-  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: var(--small-text);
 }
 
 .soccer-card button:hover {
-  background: #05880e;
+  background:  #008b09;
 }
 
 /* ==========================================================================
@@ -963,7 +979,7 @@ main {
 
 /* Sales Card Styling */
 .sales-card {
-  background: #79bdad;
+  background: #C0C0C0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
@@ -990,32 +1006,33 @@ main {
 
 /* Text Styling for sales cards */
 .sales-card h3 {
-  font-size: 1.1rem;
+  font-size: var(--p-size);
   margin: 12px 0 6px;
-  color: #333;
+  color: #000000;
 }
 
 .sales-card .price {
-  font-size: 1.2rem;
+  font-size: var(--h4-size);
   font-weight: bold;
-  color: #e63946;
+  color:  #DC143C;
   margin-bottom: 12px;
 }
 
 /* Add to Cart Button for sales cards */
 .sales-card button {
-  background: #005765;
+  background:#0f5c5c;
   color: #fff;
   border: none;
   padding: 10px 18px;
   border-radius: 8px;
-  cursor: pointer;
-  transition:  0.3s ease;
-  font-size: 0.95rem;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: var(--small-text);
 }
 
 .sales-card button:hover {
-  background: #05880e;
+  background: #008b09;
+  transform: translateY(-2px);
 }
 
 /* Responsive styles for sales grid */
@@ -1046,7 +1063,7 @@ main {
 
 /* New Card Styling */
 .new-card {
-  background: #79bdad;
+  background: #C0C0C0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
@@ -1073,20 +1090,20 @@ main {
 
 /* Text Styling for new arrival cards */
 .new-card h3 {
-  font-size: 1rem;
+  font-size: var(--p-size);
   margin: 10px 0 5px;
-  color: #333;
+  color: #000000;
 }
 
 .new-card .price {
-  font-size: 1.1rem;
+  font-size: var(--h4-size);
   font-weight: bold;
-  color: #e63946;
+  color: #DC143C;
   margin-bottom: 10px;
 }
 
 /* Size Dropdown for new arrival cards */
-.new-card select {
+.new-card select { 
   padding: 5px;
   margin: 5px 0 10px;
   border-radius: 5px;
@@ -1098,18 +1115,19 @@ main {
 
 /* Add to Cart Button for new arrival cards */
 .new-card button {
-  background: #005765;
+  background: #0f5c5c;
   color: #fff;
   border: none;
   padding: 10px 15px;
-  border-radius: 8px;
+  border-radius: 8px; 
   cursor: pointer;
-  transition:0.3s ease;
-  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: var(--small-text);
 }
 
 .new-card button:hover {
-  background: #05880e;
+  background: #008b09;
+  transform: translateY(-2px);
 }
 
 /* Responsive styles for new arrivals grid */
@@ -1131,7 +1149,7 @@ main {
    ========================================================================== */
 .about-page {
   font-family: 'Roboto', sans-serif;
-  color: #000000;
+  color: #000000; 
   line-height: 1.6;
   padding-bottom: 50px;
   background: #79bdad;
@@ -1146,7 +1164,7 @@ main {
   align-items: flex-start;
   justify-content: center;
   padding: 20px 30px;
-  background: #79bdad;
+  background: #0f5c5c;
   gap: 30px;
   width: 70%;
   max-width: 900px;
@@ -1157,16 +1175,18 @@ main {
   max-width: 600px;
   align-self: center;
   text-align: center;
+  color: #ffffff;
 }
 
 .about-hero-text h1 {
-  font-size: 2.2rem;
+  font-size: var(--h1-size);
   margin-bottom: 15px;
   color: #000000;
 }
 
 .about-hero-text p {
-  font-size: 1.1rem;
+  font-size: var(--p-size);
+  color: #ffffff;
 }
 
 /* Mission & Experience Sections */
@@ -1175,23 +1195,24 @@ main {
 .about-follow {
   padding: 20px 30px;
   text-align: center;
-  background: #79bdad;
+  background: #0f5c5c;
     width: 70%;
   max-width: 900px;
+  color: #ffffff;
  
 }
 
 .about-mission h2,
 .about-experience h2,
 .about-follow h2 {
-  font-size: 1.8rem;
+  font-size: var(--h2-size);
   color: #000000;
   margin-bottom: 15px;
 }
 
 .about-mission p,
 .about-experience p,
-.about-follow p {
+.about-follow p { 
   max-width: 700px;
   margin: 0 auto 20px;
   font-size: 1.05rem;
@@ -1226,13 +1247,16 @@ main {
    Global Styles (Body, Typography, Containers)
    ========================================================================== */
 /* Global Body Background Gradient */
-body {
-  font-family: 'Roboto', sans-serif;
+body { 
+  font-family: var(--font-secondary); 
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #00f0c2 0%, #1a4ee8 100%);
+
+  background: linear-gradient(to bottom, rgb(0, 0, 0), teal);
   background-attachment: fixed; /* stays while scrolling */
-  color: #333;
+  color: #000000;
+  font-size: var(--p-size);
+  line-height: var(--line-height-base);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1241,7 +1265,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* General styling for content containers like sections and main */
 section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
-  background: rgba(255, 255, 255, 0.95); /* content stands out */
+  background: #000000;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -1261,13 +1285,14 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   width: 90%;
   max-width: 500px;
   margin: 50px auto;
+  
 }
 
 #Enquiry h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #333;
-  font-size: 2em;
+  color: #ffffff;
+  font-size: var(--h1-size);
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   align-self: center;
@@ -1275,7 +1300,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 
 #Enquiry form label {
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
 }
 
 #Enquiry form input,
@@ -1285,13 +1310,14 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   margin-top: 6px;
   border: 1px solid #04978d;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: var(--p-size);
   transition: border-color 0.3s, box-shadow 0.3s;
+  color: #000000;
 }
 
 #Enquiry form input:focus,
 #Enquiry form textarea:focus {
-  border-color: #6BC1FF;
+  border-color: #DC143C;
   box-shadow: 0 0 8px rgba(107, 193, 255, 0.5);
   outline: none;
 }
@@ -1300,9 +1326,9 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   width: 100%;
   padding: 12px;
   margin-top: 15px;
-  background-color: #005765;
+  background-color: #0f5c5c;
   color: white;
-  font-size: 1em;
+  font-size: var(--p-size);
   font-weight: bold;
   border: none;
   border-radius: 4px;
@@ -1311,7 +1337,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 }
 
 #Enquiry form button:hover {
-  background-color:#05880e;
+  background-color:#008b09;
   transform: translateY(-2px);
 }
 
@@ -1324,7 +1350,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   border-radius: 10px;
   font-weight: bold;
   color: white;
-  font-size: 1em;
+  font-size: var(--p-size);
   z-index: 10000;
   display: none; /* hidden by default */
   opacity: 0;
@@ -1338,7 +1364,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 }
 
 #form-message-box.success {
-  background-color: #28a745;
+  background-color: #008b09;
 }
 
 #form-message-box.error {
@@ -1360,19 +1386,21 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   font-family: 'Roboto', sans-serif;
   align-self: center;
   text-align: center;
+  color: #ffffff;
+
 }
 
 #Contact h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #000000;
-  font-size: 2em;
+  color: #ffffff;
+  font-size: var(--h1-size);
   font-weight: bold;
 }
 
 #Contact form label {
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
 }
 
 #Contact form input,
@@ -1382,13 +1410,13 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   margin-top: 6px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: var(--p-size);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #Contact form input:focus,
 #Contact form textarea:focus {
-  border-color: #008f8f;
+  border-color:#DC143C;
   box-shadow: 0 0 8px rgba(2, 89, 152, 0.5);
   outline: none;
 }
@@ -1397,9 +1425,9 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   width: 100%;
   padding: 12px;
   margin-top: 15px;
-  background-color: #005765;
+  background-color: #0f5c5c;
   color: white;
-  font-size: 1em;
+  font-size: var(--p-size);
   font-weight: bold;
   border: none;
   border-radius: 8px;
@@ -1408,7 +1436,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 }
 
 #Contact form button:hover {
-  background-color:#05880e;
+  background-color:#008b09;
   transform: translateY(-2px);
 }
 
@@ -1417,7 +1445,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
    ========================================================================== */
    
 #Login {
-  background-color: rgba(255, 255, 255, 0.95); /* White with slight transparency */
+  background-color: rgba(0, 0, 0, 0.95); /* White with slight transparency */
   padding: 30px; /* Reduced padding for better mobile view */
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -1427,19 +1455,20 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   align-self: center;
   text-align: center ;
   font-family: 'Roboto', sans-serif;
+  
 }
 
 #Login h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #000000;
-  font-size: 2em;
+  color: #ffffff;
+  font-size: var(--h1-size);
   font-weight: bold;
 }
 
 #Login form label {
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
 }
 
 #Login form input {
@@ -1449,12 +1478,12 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   margin-bottom: 15px;
   border: 1px solid #000000;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: var(--p-size);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #Login form input:focus {
-  border-color: #067b8f;
+  border-color: #DC143C;
   box-shadow: 0 0 8px rgba(107, 193, 255, 0.5);
   outline: none;
 }
@@ -1463,9 +1492,9 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  background-color: #005765;
+  background-color:  #0f5c5c;
   color: white;
-  font-size: 1em;
+  font-size: var(--p-size);
   font-weight: bold;
   border: none;
   border-radius: 8px;
@@ -1474,18 +1503,19 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 }
 
 #Login button.shop-now:hover {
-  background-color: #05880e;
+  background-color: #008b09;
   transform: translateY(-2px);
 }
 
 #Login p {
   text-align: center;
   margin-top: 15px;
-  font-size: 0.95em;
+  font-size: var(--small-text);
+  color: #ffffff;
 }
 
 #Login p a {
-  color: #06717f;
+  color:  #0f5c5c;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
  
@@ -1493,7 +1523,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 
 #Login p a:hover {
   text-decoration: underline;
-
+ color: #008b09;
 }
 
 /* ==========================================================================
@@ -1501,7 +1531,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
    ========================================================================== */
    
 #SignUp {
-  background-color: rgba(255, 255, 255, 0.95); /* White with slight transparency */
+  background-color: rgba(0, 0, 0, 0.95); /* White with slight transparency */
   padding: 30px; /* Reduced padding for better mobile view */
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -1511,6 +1541,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   align-self: center;
   text-align: center;
   font-family: 'Roboto', sans-serif;;
+  color: #ffffff;
 }
 
 #SignUp .form-container {
@@ -1519,14 +1550,14 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 #SignUp h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #000000;
-  font-size: 2em;
+  color: #ffffff;
+  font-size: var(--h1-size);
   font-weight: bold;
 }
 
 #SignUp form label {
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
 }
 
 #SignUp form input {
@@ -1537,12 +1568,12 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   margin-bottom: 2px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: var(--p-size);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 #SignUp form input:focus {
-  border-color: #007078;
+  border-color: #DC143C;
   box-shadow: 0 0 8px rgba(107, 193, 255, 0.5);
   outline: none;
 }
@@ -1551,9 +1582,9 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  background-color: #005765;
+  background-color: #0f5c5c;
   color: white;
-  font-size: 1em;
+  font-size: var(--p-size);
   font-weight: bold;
   border: none;
   border-radius: 8px;
@@ -1569,16 +1600,17 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 #SignUp p {
   text-align: center;
   margin-top: 15px;
-  font-size: 0.95em;
+  font-size: var(--small-text);
 }
 
 #SignUp p a {
-  color: #056982;
+  color: #0f5c5c;
   text-decoration: none;
 }
 
 #SignUp p a:hover {
   text-decoration: underline;
+  color: #008b09;
 }
 
 /* Message display */
@@ -1587,7 +1619,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   padding: 10px 15px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95em;
+  font-size: var(--small-text);
   display: none;
 }
 
@@ -1609,7 +1641,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 .new-arrivals-intro, 
 .new-arrivals-outro {
   max-width: 900px;
-  margin: 20px auto;
+  margin: 20px auto; 
   text-align: center;
   font-size: 1rem;
   line-height: 1.6;
@@ -1631,14 +1663,13 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   color: #000000;
   margin-bottom: 25px;
   line-height: 1.6;
-  font-size: 1.05em;
-  font-family: 'Arial', sans-serif;
+  font-size: var(--p-size);
 }
 
 /* Optional: Make text slightly bolder on larger screens */
 @media screen and (min-width: 768px) {
   #Contact p {
-    font-size: 1.1em;
+    font-size: calc(var(--p-size) * 1.1);
   }
 }
 
@@ -1647,7 +1678,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   color: #000000;
   margin-bottom: 25px;
   line-height: 1.6;
-  font-size: 1.05em;
+  font-size: var(--p-size);
   font-family: "Roboto", sans-serif;
   align-self: center;
 ;
@@ -1658,7 +1689,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   text-align: center;
   color: #000000;
   margin-bottom: 25px;
-  font-size: 1.05em;
+  font-size: var(--p-size);
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
   align-self: center;
@@ -1668,7 +1699,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   text-align: center;
   color: #000000;
   margin-bottom: 25px;
-  font-size: 1.05em;
+  font-size: var(--p-size);
   line-height: 1.5;
   align-self: center;
   font-family: "Roboto", sans-serif;
@@ -1721,7 +1752,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   background-color: #000000;
   border-radius: 0%;
   font-size: larger;
-}
+} 
 
 /* Responsive */
 @media screen and (max-width: 650px) {
@@ -1731,12 +1762,6 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   .home-tagline-section {
     padding: 25px 15px;
   }
-}
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  color: #333;
 }
 
 .locator {
