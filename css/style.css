@@ -930,12 +930,10 @@ main {
    ========================================================================== */
 /* Soccer Central Grid */
 .soccer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 per row */
-  gap: 80px; /* spacing between cards */
-  padding: 30px 50px;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on desktop */
+  gap: 25px; /* spacing between cards */
+  padding: 20px;
   justify-items: center;
-
 }
 
 /* Soccer Card Styling */
@@ -1004,6 +1002,19 @@ main {
 
 .soccer-card button:hover {
   background:  #008b09;
+}
+
+/* Responsive Soccer Grid */
+@media (max-width: 1024px) {
+  .soccer-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 per row on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .soccer-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on smaller tablets/mobile */
+  }
 }
 
 /* ==========================================================================
