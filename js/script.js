@@ -491,6 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initialLoad(); // Call the function to load the map on page start
   }
 
+<<<<<<< Updated upstream
   // --- CONTACT PAGE FORM (BELOW MAP) ---
   const pageContactForm = document.getElementById('page-contact-form');
   if (pageContactForm) {
@@ -555,4 +556,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+=======
+>>>>>>> Stashed changes
 });
