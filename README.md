@@ -158,11 +158,26 @@ Part 3:
 
 2 Nov 2025 - Interactive elements - Added in java script for all screens.
 
-3 Nov 2025 - Dynamic Loading - 
+3 Nov 2025 - Dynamic Loading - Added to most screens.
 
-3 Nov 2025 - On-Page SEO - 
+3 Nov 2025 - On-Page SEO - Added on screens which was lacking it.
 
-3 Nov 2025 - Images fixing - 
+3 Nov 2025 - Images fixing - Layout of images.
+
+3 Nov 2025 - Soccer central fix - layout and added sorting. 
+
+3 Nov 2025 - json added,sitemap,robot - Added the json,robot.txt and sitemap.xml. 
+
+3 Nov 2025 - Equiry edited - Added subject for user to choose.
+
+3 Nov 2025 - Contact - Added the email to pop up so that users can send the email directly to the shop. 
+
+3 Nov 2025 - Form submission - Added to forms. 
+
+3 Nov 2025 - Ajax submission - Added to forms. 
+
+3 Nov 2025 - Layout different devices - Fixed store list to be centered on different devices. 
+
 
 Evidence of different screens :
 1. Desktop
@@ -325,7 +340,19 @@ Created simulated social media post for project website, linking to GitHub Pages
 
 <img width="1472" height="704" alt="soical media post" src="https://github.com/user-attachments/assets/d677c0ed-cdbb-40fa-9db4-955eeec2413e" />
 
+Tips if cant access the website: 
+
+Click on the backlink thats here on the readme!
+
 References 
+
+Andrey Khusid, Oleg Shardin, 2011.Miro [App]. Available at:< https://miro.com/app/board/uXjVJB-dhz4=/  > [Accessed on the 20 August 2025]. 
+
+Ben Silbermann, Paul Sciarra, and Evan Sharp, 2009.Pinterest[App]. Available at: < https://za.pinterest.com/ > [Accessed on the 23 August 2025].
+
+cfo,2022. Studio 88 acquisition backs Mr Price’s vision of most valuable retailer in Africa[Online] Available at: < https://cfo.co.za/articles/studio-88-acquisition-backs-mr-prices-vision-of-most-valuable-retailer-in-africa/ > [Accessed on the 5 August 2025].
+
+startupmag,2025. The Rise of Studio 88: How a Retail Giant Conquered South Africa’s Sneaker and Streetwear Market[Online] Available at: < https://startupmag.co.za/2025/02/the-rise-of-studio-88-how-a-retail-giant-conquered-south-africas-sneaker-and-streetwear-market/ > [Accessed on the 5 August 2025].
 
 Studio-88,2025. Studio 88[Online] Available at: < https://www.studio-88.co.za/  > [Accessed on the 5 August 2025].
 
@@ -333,12 +360,6 @@ Studio-88,2025. Studio 88's Remarkable Journey: From A Vision to Store Number 88
 
 Studio-88,2025. About us [Online] Available at: < https://www.studio-88.co.za/about-us > [Accessed on the 5 August 2025].
 
-cfo,2022. Studio 88 acquisition backs Mr Price’s vision of most valuable retailer in Africa[Online] Available at: < https://cfo.co.za/articles/studio-88-acquisition-backs-mr-prices-vision-of-most-valuable-retailer-in-africa/ > [Accessed on the 5 August 2025].
+w3schools,2025. W3.CSS Modal [Online] Available at:< https://www.w3schools.com/w3css/w3css_modal.asp > [Accessed on the 2 Nov 2025].
 
-startupmag,2025. The Rise of Studio 88: How a Retail Giant Conquered South Africa’s Sneaker and Streetwear Market[Online] Available at: < https://startupmag.co.za/2025/02/the-rise-of-studio-88-how-a-retail-giant-conquered-south-africas-sneaker-and-streetwear-market/ > [Accessed on the 5 August 2025].
-
-Andrey Khusid, Oleg Shardin, 2011.Miro [App]. Available at:< https://miro.com/app/board/uXjVJB-dhz4=/  > [Accessed on the 20 August 2025]. 
-
-Ben Silbermann, Paul Sciarra, and Evan Sharp, 2009.Pinterest[App]. Available at: < https://za.pinterest.com/ > [Accessed on the 23 August 2025] 
-
-
+w3schools,2025. HTML Color Picker [Online] Available at : < https://www.w3schools.com/colors/colors_picker.asp > [Accessed on the 1 Nov 2025 ].
