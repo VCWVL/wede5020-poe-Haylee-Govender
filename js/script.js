@@ -494,6 +494,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- CONTACT PAGE FORM (BELOW MAP) ---
   const pageContactForm = document.getElementById('page-contact-form');
   if (pageContactForm) {
+    // Set attributes dynamically to avoid mixed content warnings on page load,
+    // while still providing a fallback if JS were to fail partially.
+    pageContactForm.setAttribute('action', 'mailto:info@studio88.co.za');
+    pageContactForm.setAttribute('method', 'post');
+    pageContactForm.setAttribute('enctype', 'text/plain');
+
     pageContactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
