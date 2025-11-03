@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const emailInput = document.getElementById('contact-email');
       const subjectInput = document.getElementById('contact-subject');
       const messageInput = document.getElementById('contact-message');
-      const messageBox = document.getElementById('form-message-box');
+      const messageBox = document.getElementById('contact-form-message-box');
 
       // --- Validation ---
       if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
@@ -497,14 +497,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // --- Success ---
-      displayFormMessage('Thank you for your message! We will be in touch shortly.', 'success');
+      // --- Success: Compile and open email client ---
+      const recipientEmail = 'info@studio88.co.za'; // The destination email address
+      const emailSubject = encodeURIComponent(subjectInput.value);
+      
+      // Compile the body of the email
+      const emailBody = `
+        Message from: ${nameInput.value}
+        Reply to: ${emailInput.value}
+        ------------------------------------------
+
+        ${messageInput.value}
+      `;
+
+      // Construct the mailto link
+      const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${encodeURIComponent(emailBody)}`;
+
+      // Open the user's default email client
+      window.location.href = mailtoLink;
+
+      // Inform the user and reset the form
+      displayFormMessage('Your email client has been opened to send the message.', 'success');
       pageContactForm.reset();
     });
 
     // Helper function to show the message box
     function displayFormMessage(message, type) {
-      const messageBox = document.getElementById('form-message-box');
+      const messageBox = document.getElementById('contact-form-message-box');
       messageBox.textContent = message;
       messageBox.className = `show ${type}`; // e.g., 'show success' or 'show error'
 

@@ -860,12 +860,13 @@ main {
 }
 
 .category-card img {
-  width: 100%;
-  height:auto; 
+  display: block;
+  margin: 0 auto;
+  max-width: 300px; /* Set a max-width for the image */
+  width: 100%; /* Allow it to be responsive */
+  height: auto; 
   aspect-ratio: 3 / 4; 
   object-fit: contain;
-  width: 300px;
-
   border-bottom: 1px solid #ddd;
   transition: transform 0.3s ease;
   

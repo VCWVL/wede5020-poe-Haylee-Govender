@@ -143,26 +143,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- CONTACT FORM LOGIC ---
-    const contactForm = document.getElementById("contact-form");
+    // This logic is now inside the script.js file and is more robust.
+    // This section can be removed to avoid conflicts.
+    // const contactForm = document.getElementById("contact-form");
+    // if (contactForm) {
+    //     const emailInput = document.getElementById("contact-email");
+    //     const message = document.getElementById("form-message");
+
+    //     contactForm.addEventListener("submit", function (e) {
+    //         e.preventDefault();
+    //         const email = emailInput.value.trim();
+    //         const regex = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+
+    //         // Simple email validation
+    //         if (!regex.test(email)) {
+    //             message.textContent = " Please enter a valid email address.";
+    //             message.style.color = "red";
+    //         } else {
+    //             // On success, show a thank you message and clear the form
+    //             message.textContent = "Thank you for contacting us! We will respond to you shortly.";
+    //             message.style.color = "limegreen";
+    //             contactForm.reset();
+    //         }
+    //     });
+    // }
+    const contactForm = document.getElementById("page-contact-form");
     if (contactForm) {
-        const emailInput = document.getElementById("contact-email");
-        const message = document.getElementById("form-message");
-
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const email = emailInput.value.trim();
-            const regex = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
-
-            // Simple email validation
-            if (!regex.test(email)) {
-                message.textContent = " Please enter a valid email address.";
-                message.style.color = "red";
-            } else {
-                // On success, show a thank you message and clear the form
-                message.textContent = "Thank you for contacting us! We will respond to you shortly.";
-                message.style.color = "limegreen";
-                contactForm.reset();
-            }
-        });
+      // This logic was moved to script.js to be consolidated with other page-specific scripts.
+      // This avoids conflicts and keeps auth.js focused on authentication.
     }
 });
