@@ -259,7 +259,7 @@ Evidence of different screens :
 
 <img width="568" height="817" alt="image" src="https://github.com/user-attachments/assets/ba18890a-bcf2-4c83-ae4c-cbb567326c31" />
 
-<img width="572" height="813" alt="image" src="https://github.com/user-attachments/assets/1bd216d6-17fb-4e12-a007-831862a79306" />
+<img width="573" height="812" alt="image" src="https://github.com/user-attachments/assets/e1b138d0-1e82-4bc3-a868-b48cc858d54c" />
 
 <img width="567" height="820" alt="image" src="https://github.com/user-attachments/assets/74bd8d1d-1063-4434-a3d4-96dd7e5b4db3" />
 
