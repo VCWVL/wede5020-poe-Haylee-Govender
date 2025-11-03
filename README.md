@@ -148,6 +148,9 @@ Part 2:
 
 Part 3: 
 
+1 Nov 2025 - First commit - Copied part 2 folder and pushed into new repository. 
+
+1 Nov 2025 -
 
 Evidence of different screens :
 1. Desktop
