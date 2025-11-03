@@ -1794,6 +1794,7 @@ h1, h2 {
 .content-container {
   display: flex;
   gap: 20px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
