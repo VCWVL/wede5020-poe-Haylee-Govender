@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const categorySelect = document.getElementById('category');
   const brandSelect = document.getElementById('brand');
   const searchInput = document.getElementById('search');
+  const sortSelect = document.getElementById('sort');
   const productGrid = document.getElementById('productGrid');
   const loadMoreBtn = document.getElementById('load-more-btn');
   const loadingIndicator = document.getElementById('loading-indicator');
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const category = categorySelect.value.toLowerCase();
       const brand = brandSelect.value.toLowerCase();
       const searchTerm = searchInput.value.toLowerCase();
+      const sortValue = sortSelect.value;
 
       currentFilteredProducts = allProducts.filter(p => {
         const pName = p.name.toLowerCase();
@@ -139,6 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
           (brand === 'all' || pBrand === brand)
         );
       });
+
+      // --- SORTING LOGIC ---
+      if (sortValue === 'price-asc') {
+        currentFilteredProducts.sort((a, b) => a.price - b.price);
+      } else if (sortValue === 'price-desc') {
+        currentFilteredProducts.sort((a, b) => b.price - a.price);
+      } else if (sortValue === 'name-asc') {
+        currentFilteredProducts.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (sortValue === 'name-desc') {
+        currentFilteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+      }
 
       // Reset the view
       productGrid.innerHTML = '';
@@ -166,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
     genderSelect.addEventListener('change', filterAndDisplayProducts);
     categorySelect.addEventListener('change', filterAndDisplayProducts);
     brandSelect.addEventListener('change', filterAndDisplayProducts);
+    sortSelect.addEventListener('change', filterAndDisplayProducts);
     loadMoreBtn.addEventListener('click', loadMoreProducts);
 
     // Initial load
@@ -181,20 +195,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- SOCCER PAGE FILTERING LOGIC ---
   const soccerCategorySelect = document.getElementById('soccer-category');
+  const soccerSortSelect = document.getElementById('soccer-sort');
   const soccerCards = document.querySelectorAll('.soccer-card');
+  const soccerGrid = document.getElementById('soccerGrid');
 
   // This function filters soccer items based on the selected category
   function filterSoccerItems() {
-    if (!soccerCategorySelect) return; // Guard clause
+    if (!soccerCategorySelect || !soccerGrid) return; // Guard clause
+
     const category = soccerCategorySelect.value.toLowerCase();
-    soccerCards.forEach(product => {
-      const productCategory = (product.getAttribute("data-category") || '').toLowerCase();
-      if (category === "all" || productCategory === category) {
-        product.style.display = "block";
-      } else {
-        product.style.display = "none";
-      }
+    const sortValue = soccerSortSelect.value;
+
+    // Convert NodeList to Array to make it sortable
+    let cardsArray = Array.from(soccerCards);
+
+    // 1. Filter the cards
+    const visibleCards = cardsArray.filter(card => {
+      const cardCategory = (card.getAttribute("data-category") || '').toLowerCase();
+      const shouldShow = category === "all" || cardCategory === category;
+      // Hide or show based on category filter first
+      card.style.display = shouldShow ? "block" : "none";
+      return shouldShow;
     });
+
+    // 2. Sort the *visible* cards
+    if (sortValue !== 'default') {
+      visibleCards.sort((a, b) => {
+        const nameA = a.querySelector('h3').textContent;
+        const nameB = b.querySelector('h3').textContent;
+        const priceA = parseFloat(a.querySelector('.price').textContent.replace('R', ''));
+        const priceB = parseFloat(b.querySelector('.price').textContent.replace('R', ''));
+
+        if (sortValue === 'price-asc') return priceA - priceB;
+        if (sortValue === 'price-desc') return priceB - priceA;
+        if (sortValue === 'name-asc') return nameA.localeCompare(nameB);
+        if (sortValue === 'name-desc') return nameB.localeCompare(nameA);
+      });
+    }
+
+    // 3. Re-append sorted cards to the grid
+    // No need to clear, just re-append which moves them
+    visibleCards.forEach(card => soccerGrid.appendChild(card));
   }
 
   // If the soccer filter dropdown exists, set it up
@@ -206,11 +247,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add event listener and run the filter on page load
     soccerCategorySelect.addEventListener('change', filterSoccerItems);
+    if (soccerSortSelect) soccerSortSelect.addEventListener('change', filterSoccerItems);
     filterSoccerItems();
   }
 
   // --- ENQUIRY FORM SUBMISSION LOGIC ---
-  const enquiryForm = document.getElementById("Enquiry form"); // Corrected ID to match HTML
+  const enquiryForm = document.getElementById("Enquiry form");
   if (enquiryForm) {
     const emailInput = document.getElementById("enquiry-email");
     const message = document.getElementById("form-message");
@@ -388,10 +430,73 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     renderStores();
 
+    
     // Province filter
     select.addEventListener("change", e => renderStores(e.target.value));
+
+    // --- INITIAL MAP LOAD ---
+    // Function to load the first store by default
+    function initialLoad() {
+      renderStores(); // Render all stores
+      if (stores.length > 0) {
+        // Set the iframe to the first store's embed URL
+        mapFrame.src = stores[0].embedUrl;
+        // Find the first rendered store item and mark it as active
+        const firstStoreItem = list.querySelector('.store-item');
+        if (firstStoreItem) {
+          firstStoreItem.classList.add('active');
+        }
+      }
+    }
+    initialLoad(); // Call the function to load the map on page start
   }
+
+  // --- CONTACT PAGE FORM (BELOW MAP) ---
+  const pageContactForm = document.getElementById('page-contact-form');
+  if (pageContactForm) {
+    pageContactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const subjectInput = document.getElementById('contact-subject');
+      const messageInput = document.getElementById('contact-message');
+      const messageBox = document.getElementById('form-message-box');
+
+      // --- Validation ---
+      if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
+        displayFormMessage('Please fill in all fields.', 'error');
+        return;
+      }
+
+      const emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+      if (!emailRegex.test(emailInput.value)) {
+        displayFormMessage('Please enter a valid email address.', 'error');
+        return;
+      }
+
+      // --- Success ---
+      displayFormMessage('Thank you for your message! We will be in touch shortly.', 'success');
+      pageContactForm.reset();
+    });
+
+    // Helper function to show the message box
+    function displayFormMessage(message, type) {
+      const messageBox = document.getElementById('form-message-box');
+      messageBox.textContent = message;
+      messageBox.className = `show ${type}`; // e.g., 'show success' or 'show error'
+
+      // Hide the message after 4 seconds
+      setTimeout(() => {
+        messageBox.classList.remove('show');
+      }, 4000);
+    }
+  }
+
 });
+
+
+
     const noResultsMessage = document.getElementById('no-results-message');
 
     let visibleProductsCount = 0;
@@ -471,7 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- ENQUIRY FORM SUBMISSION LOGIC ---
-  const enquiryForm = document.getElementById("Enquiry form"); // Corrected ID to match HTML
+  const enquiryForm = document.getElementById("enquiry-form"); // Corrected ID to match HTML
   if (enquiryForm) {
     const emailInput = document.getElementById("enquiry-email");
     const message = document.getElementById("form-message");

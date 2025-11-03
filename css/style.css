@@ -1259,24 +1259,6 @@ main {
   font-size: 1.05rem;
 }
 
-/* Follow Us Section */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 15px;
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-}
-
 /* Responsive */
 @media (max-width: 1024px) {
   .about-hero {
@@ -1439,47 +1421,10 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
   font-weight: bold;
 }
 
-#Contact form label {
-  font-weight: 600;
-  color: #ffffff;
-}
 
-#Contact form input,
-#Contact form textarea {
-  width: 100%;
-  padding: 12px 1px;
-  margin-top: 6px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: var(--p-size);
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
 
-#Contact form input:focus,
-#Contact form textarea:focus {
-  border-color:#DC143C;
-  box-shadow: 0 0 8px rgba(2, 89, 152, 0.5);
-  outline: none;
-}
 
-#Contact form button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background-color: #0f5c5c;
-  color: white;
-  font-size: var(--p-size);
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-}
 
-#Contact form button:hover {
-  background-color:#008b09;
-  transform: translateY(-2px);
-}
 
 /* ==========================================================================
    Login Page Styles
@@ -1728,7 +1673,7 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 /* Login Intro Text */
 #Login .login-intro {
   text-align: center;
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 25px;
   font-size: var(--p-size);
   line-height: 1.5;
@@ -1738,12 +1683,13 @@ section, main, .new-grid, .sales-grid, .product-grid, .soccer-grid {
 /* Intro Text */
 .signup-intro {
   text-align: center;
-  color: #000000;
+  color: "#000000";
   margin-bottom: 25px;
   font-size: var(--p-size);
   line-height: 1.5;
   align-self: center;
   font-family: "Roboto", sans-serif;
+  
 
 }
 /* Products Intro */
@@ -2072,6 +2018,85 @@ h1, h2 {
   transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* ==========================================================================
+   Page Contact Form (Below Map)
+   ========================================================================== */
+
+.page-contact-section {
+  background-color: #000000;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 800px;
+  margin: 40px auto;
+  color: #fff;
+}
+
+.page-contact-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: var(--h2-size);
+}
+
+
+#page-contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+#page-contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+
+#page-contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 8px;
+  font-size: var(--p-size);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#page-contact-form input:focus,
+#page-contact-form textarea:focus {
+  border-color: #DC143C;
+  box-shadow: 0 0 8px rgba(15, 92, 92, 0.7);
+  outline: none;
+}
+
+#page-contact-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+/* Message box for form submission feedback */
+#form-message-box {
+  position: fixed;
+  top: 20px;
+  transform: translateX(120%); /* Start off-screen to the right */
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: var(--p-size);
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+ 
+}
+
+#form-message-box.show {
+  opacity: 1;
+  transform: translateX(0); /* Slide into view */
+}
+
+#form-message-box.success { background-color: #008b09; }
+#form-message-box.error { background-color: #DC143C; }
 /* ==========================================================================
    Checkout Confirmation Message
    ========================================================================== */

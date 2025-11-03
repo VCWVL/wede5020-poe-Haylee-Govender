@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find a Studio 88 store near you. Use our interactive store locator to filter by province and get directions via Google Maps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Studio 88 - Contact</title>
   <link rel="stylesheet" href="css/style.css">
 
@@ -73,6 +74,37 @@
         </iframe>
       </div>
     </div>
+
+    <!-- ==========================================================================
+       Page Contact Form
+       ========================================================================== -->
+    <section class="page-contact-section">
+      <h2>Get in Touch</h2>
+      <p>Have a question or feedback? Drop us a line below!</p>
+      <form id="page-contact-form">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <input type="text" id="contact-subject" name="subject" required>
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="shop-now">Send Message</button>
+      </form>
+    </section>
+    
+    <!-- This is the message box that will appear after submission -->
+    <div id="form-message-box"></div>
+    
   </main>
 <!-- Common footer for the website -->
 <footer class="footer">

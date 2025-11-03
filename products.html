@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop with Filters</title>
+  <meta name="description" content="Shop the latest trends in footwear, clothing, and accessories from top brands like Nike, Adidas, and Puma at Studio 88. Filter by gender, brand, and category.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Shop Products - Footwear, Clothing & More | Studio 88</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -71,6 +72,18 @@
       <option value="clothing">Clothing</option>
       <option value="accessories">Accessories</option>
       <option value="sambae">Sambae</option>
+    </select>
+
+    <!-- This div will act as a line break in the flex container -->
+    <div style="flex-basis: 100%; height: 0;"></div>
+
+    <label for="sort">Sort by:</label>
+    <select id="sort">
+      <option value="default">Default</option>
+      <option value="price-asc">Price: Low to High</option>
+      <option value="price-desc">Price: High to Low</option>
+      <option value="name-asc">Name: A-Z</option>
+      <option value="name-desc">Name: Z-A</option>
     </select>
   </div>
 
