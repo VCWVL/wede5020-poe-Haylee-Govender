@@ -258,6 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectSelect = document.getElementById("enquiry-subject");
     const message = document.getElementById("form-message");
 
+    // Find the submit button to disable it during submission
+    const submitButton = enquiryForm.querySelector('button[type="submit"]');
+
+
     enquiryForm.addEventListener("submit", function (e) {
       // Prevent the default form submission which reloads the page
       e.preventDefault();
@@ -280,20 +284,34 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // --- Process and Respond based on subject ---
-      let responseText = "";
-      if (subject === 'product') {
-        responseText = "Thank you for your interest in our products! A product specialist will review your query and respond within 24 hours.";
-      } else if (subject === 'order') {
-        responseText = "For order support, please expect a reply from our customer service team within the next 2-4 business hours. For urgent issues, call our support line.";
-      } else if (subject === 'sponsorship') {
-        responseText = "Thank you for your interest in collaborating with Studio 88! Your proposal has been forwarded to our marketing team. They will contact you if there is a potential fit.";
-      } else {
-        responseText = "Thank you for your feedback! We appreciate you taking the time to write to us. Our team will review your message and get in touch if a response is needed.";
-      }
-      message.textContent = responseText;
-      message.style.color = "limegreen";
-      enquiryForm.reset();
+      // Disable button and show loading message
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+      message.textContent = ""; // Clear previous messages
+
+      // --- Simulate AJAX Submission ---
+      setTimeout(() => {
+        // --- Process and Respond based on subject ---
+        let responseText = "";
+        if (subject === 'product') {
+          responseText = "Thank you for your interest in our products! A product specialist will review your query and respond within 24 hours.";
+        } else if (subject === 'order') {
+          responseText = "For order support, please expect a reply from our customer service team within the next 2-4 business hours. For urgent issues, call our support line.";
+        } else if (subject === 'sponsorship') {
+          responseText = "Thank you for your interest in collaborating with Studio 88! Your proposal has been forwarded to our marketing team. They will contact you if there is a potential fit.";
+        } else {
+          responseText = "Thank you for your feedback! We appreciate you taking the time to write to us. Our team will review your message and get in touch if a response is needed.";
+        }
+        message.textContent = responseText;
+        message.style.color = "limegreen";
+        
+        // Reset form and re-enable button
+        enquiryForm.reset();
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Enquiry';
+
+      }, 1000); // Simulate 1-second network delay
+
     });
   }
 
@@ -484,6 +502,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const subjectInput = document.getElementById('contact-subject');
       const messageInput = document.getElementById('contact-message');
       const messageBox = document.getElementById('contact-form-message-box');
+      const submitButton = pageContactForm.querySelector('button[type="submit"]');
 
       // --- Validation ---
       // Trim values to ensure fields with only spaces are considered empty
@@ -503,28 +522,24 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // --- Success: Compile and open email client ---
-      const recipientEmail = 'info@studio88.co.za'; // The destination email address
-      const emailSubject = encodeURIComponent(subjectInput.value);
-      
-      // Compile the body of the email
-      const emailBody = `
-        Message from: ${name}
-        Reply to: ${email}
-        ------------------------------------------
+      // --- AJAX Submission Simulation ---
+      // Disable button and show loading state
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
 
-        ${message}
-      `;
+      // Simulate a network request
+      setTimeout(() => {
+        // On "success", display a confirmation message
+        displayFormMessage('Thank you for your message! We will get back to you shortly.', 'success');
+        
+        // Reset the form
+        pageContactForm.reset();
 
-      // Construct the mailto link
-      const mailtoLink = `mailto:${recipientEmail}?subject=${emailSubject}&body=${encodeURIComponent(emailBody)}`;
+        // Re-enable the button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
 
-      // Open the user's default email client
-      window.location.href = mailtoLink;
-
-      // Inform the user and reset the form
-      displayFormMessage('Your email client has been opened to send the message.', 'success');
-      pageContactForm.reset();
+      }, 1000); // 1-second delay to simulate sending
     });
 
     // Helper function to show the message box
