@@ -45,17 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- PRODUCT PAGE FILTERING LOGIC ---
-  const genderSelect = document.getElementById('gender');
-  const categorySelect = document.getElementById('category');
-  const brandSelect = document.getElementById('brand');
-  const searchInput = document.getElementById('search');
-  const sortSelect = document.getElementById('sort');
   const productGrid = document.getElementById('productGrid');
-  const loadMoreBtn = document.getElementById('load-more-btn');
-  const loadingIndicator = document.getElementById('loading-indicator');
 
   // --- DYNAMIC PRODUCT LOADING & FILTERING ---
   if (productGrid) {
+    const genderSelect = document.getElementById('gender');
+    const categorySelect = document.getElementById('category');
+    const brandSelect = document.getElementById('brand');
+    const searchInput = document.getElementById('search');
+    const sortSelect = document.getElementById('sort');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const loadingIndicator = document.getElementById('loading-indicator');
+
     let currentPage = 0;
     const productsPerPage = 12; // Show 12 products at a time
     let currentFilteredProducts = [];
@@ -449,10 +450,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Initial render
-    renderStores();
-
-    
     // Province filter
     select.addEventListener("change", e => renderStores(e.target.value));
 
