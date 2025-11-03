@@ -150,7 +150,19 @@ Part 3:
 
 1 Nov 2025 - First commit - Copied part 2 folder and pushed into new repository. 
 
-1 Nov 2025 -
+2 Nov 2025 - Edited css - Edited the styles due to feedback of part 2.
+
+2 Nov 2025 - Add to cart - Addedd the cart for items.
+
+2 Nov 2025 - Map - Google map added with all studio 88 stores south africa.
+
+2 Nov 2025 - Interactive elements - Added in java script for all screens.
+
+3 Nov 2025 - Dynamic Loading - 
+
+3 Nov 2025 - On-Page SEO - 
+
+3 Nov 2025 - Images fixing - 
 
 Evidence of different screens :
 1. Desktop
