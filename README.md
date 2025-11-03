@@ -116,6 +116,12 @@ Backlink:
 
 Checkout my website:https://vcwvl.github.io/wede5020-poe-Haylee-Govender/ 
 
+Shared on social media: 
+
+Created simulated social media post for project website, linking to GitHub Pages URL.
+
+<img width="1472" height="704" alt="soical media post" src="https://github.com/user-attachments/assets/f056acfd-0591-40ab-b6ed-9086bdf10c16" />
+
 Changelog: 
 
 Part 1: 
@@ -127,6 +133,7 @@ Part 1:
 Part 2:
 
 22 Sep 2025 - Copied part 1 folders and pushed to new repository.
+
 
 References 
 
