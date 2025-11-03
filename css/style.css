@@ -2229,3 +2229,22 @@ h1, h2 {
 .lightbox-close:focus {
   color: #bbb;
 }
+
+/* ==========================================================================
+   Load More Button & Indicator
+   ========================================================================== */
+
+.load-more-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#loading-indicator {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+#load-more-btn {
+  padding: 12px 30px;
+}
