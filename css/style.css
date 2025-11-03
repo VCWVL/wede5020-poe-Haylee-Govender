@@ -931,9 +931,8 @@ main {
 /* Soccer Central Grid */
 .soccer-grid {
   grid-template-columns: repeat(4, 1fr); /* 4 cards per row on desktop */
-  gap: 25px; /* spacing between cards */
-  padding: 20px;
-  justify-items: center;
+  gap: 25px;
+  padding: 0 10px; /* Match product grid padding */
 }
 
 /* Soccer Card Styling */
@@ -1014,6 +1013,12 @@ main {
 @media (max-width: 768px) {
   .soccer-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 per row on smaller tablets/mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .soccer-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
   }
 }
 
