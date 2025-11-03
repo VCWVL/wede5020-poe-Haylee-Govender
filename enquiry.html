@@ -59,13 +59,22 @@
   We’re here to assist you with any inquiries or special requests.
 </p>
     <!-- Enquiry form -->
-    <form id="Enquiry form" >
+    <form id="enquiry-form" >
       <label for="enquiry-name">Your Name:</label><br>
       <input type="text" id="enquiry-name" name="name" required><br><br>
   
       <label for="enquiry-email">Your Email:</label><br>
       <input type="email" id="enquiry-email" name="email" required><br><br>
-  
+
+      <label for="enquiry-subject">Subject of Enquiry:</label><br>
+      <select id="enquiry-subject" name="subject" required>
+        <option value="" disabled selected>Please select a subject...</option>
+        <option value="product">Product Information</option>
+        <option value="order">Order Support</option>
+        <option value="sponsorship">Sponsorship &amp; Collaboration</option>
+        <option value="general">General Feedback</option>
+      </select><br><br>
+
       <label for="enquiry-message">Your Enquiry:</label><br>
       <textarea id="enquiry-message" rows="4" name="message" required></textarea><br><br>
   
