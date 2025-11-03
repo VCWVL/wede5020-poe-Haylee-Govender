@@ -486,7 +486,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const messageBox = document.getElementById('contact-form-message-box');
 
       // --- Validation ---
-      if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
+      // Trim values to ensure fields with only spaces are considered empty
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const subject = subjectInput.value.trim();
+      const message = messageInput.value.trim();
+
+      if (!name || !email || !subject || !message) {
         displayFormMessage('Please fill in all fields.', 'error');
         return;
       }
@@ -503,11 +509,11 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Compile the body of the email
       const emailBody = `
-        Message from: ${nameInput.value}
-        Reply to: ${emailInput.value}
+        Message from: ${name}
+        Reply to: ${email}
         ------------------------------------------
 
-        ${messageInput.value}
+        ${message}
       `;
 
       // Construct the mailto link
